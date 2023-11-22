@@ -12,6 +12,7 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
+	<h1>Code Créatif : Cours #0 «Code» et le pixel </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">Cours #0</a></li>
@@ -30,9 +31,9 @@ p    {font-family: courier;font-size: 100%;}
         
 </head>
 <body>
-<h1>Code Créatif : Cours #0</h1>
 
-<p>«Code» et le pixel </p>
+
+<h1>La toile, les pixels et les coordonnés </h1>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 function setup() {
@@ -41,6 +42,22 @@ function setup() {
 
 function draw() {
   background(255, 0, 200); // Essayer de changer la couleur de l'arrière-plan
+}
+</script>
+
+<h1>Des formes de bases </h1>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+function setup() {
+  createCanvas(400, 200);
+}
+
+function draw() {
+  background(220);
+  ellipse(50, 100, 50);
+  line(100, 50, 150, 150);
+  rect(200, 100, 50, 50);
+  triangle(300, 100, 350, 150, 400, 100);
 }
 </script>
 </body>
