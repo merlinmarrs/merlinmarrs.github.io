@@ -13,7 +13,7 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC0: «Code» et le pixel </h1>
+	<h1>CC0: le «code» et le pixel </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">CC0</a></li>
@@ -33,20 +33,11 @@ p    {font-family: courier;font-size: 100%;}
 </head>
 <body>
 
-<h1>P5JS </h1>
-<br>
-<h2>Inscrivez-vous sur : <a href="https://editor.p5js.org/">p5js editor</a></h2>
-
-
-
-<h1>La toile et les coordonnés de pixels </h1>
-<br>
-<img src="grille.jpg" alt="Grille"> 
-<br>
-<img src="Ad_Reinhardt.jpg" alt="Ad Reinhardt"> 
-<br>
+<h1>Inscrivez-vous et coder sur p5js <a href="https://editor.p5js.org/">ici</a></h1>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 0.0: la toile
 //tourne une fois, au démarrage
 function setup() {
   createCanvas(500, 500); // Essayer de changer la taille de la toile
@@ -58,31 +49,28 @@ function draw() {
 }
 </script>
 
-<h1>Des formes de bases </h1>
-<br>
-<img src="formes.jpg" alt="Formes des base"> 
-<br>
-<img src="Piet_Mondrian.jpg" alt="Piet Mondrian"> 
-<br>
+
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+// CC 0.1: ligne et rectangle
+
 function setup() {
   createCanvas(500, 500);
 }
 
 function draw() {
   background(220);
-  ellipse(40, 100, 50, 50); // ellipse(coordoné x, coordoné y, largeur, [hauteur])
   line(70, 50, 150, 150); //line(x1, y1, x2, y2)
   rect(200, 100, 50, 100); // rect(x, y, largeur)
-  triangle(300, 100, 350, 150, 400, 100); //triangle(x1, y1, x2, y2, x3, y3)
 }
 </script>
 
-<h1> La souris et le background </h1>
 <br>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 0.2: la souris
+
 function setup() {
   createCanvas(500, 500);
 }
@@ -92,11 +80,11 @@ function draw() {
   ellipse(mouseX, mouseY, 50, 50);
 }
 </script>
-
-<h1> Le clic </h1>
 <br>
-
 <script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 0.2: le clic
+
 function setup() {
   createCanvas(400, 400);
 }
@@ -107,7 +95,7 @@ function draw() {
   }
 }
 </script>
-<h1> L'aléatoire </h1>
+
 <br>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
