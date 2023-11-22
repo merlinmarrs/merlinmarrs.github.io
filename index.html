@@ -52,7 +52,7 @@ function draw() {
 }
 
 // i. Essayer de changer la taille de la toile
-// ii. Essayer de changer la couleur de l'arrière-plan
+// ii. Essayer de changer la couleur de l'arrière-plan. Comment est-ce qu'on fait toute blanche ou tout noire ?
 // iii. Qu'est-ce qui se passe si on enleve l'accolade { ?
 // iv. Comment est-ce qu'on pourrait decrire la couleur autrement (https://p5js.org/reference/#/p5/color) ?
 
@@ -78,17 +78,64 @@ function draw() {
 //i. Essayons de faire apparaitre le rectangle ailleurs sur la toile
 //ii. Quel effet est-ce que l'ordre des elements  dans le dessin a sur l'image finale ?
 //iii. Essayons d'autres formes de base comme point(), ellipse(), triangle()
-//iv. Ajoutons fill(25) pour changer la couleur du rectangle. Ou est-ce qu'il faut mettre cette ligne ?
-//v. Quel est le rectangle le plus petit possible ?
+
 
 
 </script>
 
 <br>
 <br>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+// CC 0.2: Les rectangles
+
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  background(220);
+  rect(200, 100, 50, 100); // rect(x, y, largeur, hauteur)
+  rect(20, 10, 50, 100); // rect(x, y, largeur, hauteur)
+}
+
+//i. Essayons de faire apparaitre le rectangle ailleurs sur la toile
+//ii. Quel effet est-ce que l'ordre des elements  dans le dessin a sur l'image finale ?
+//iii. Essayons d'autres formes de base comme point(), ellipse(), triangle()
+
+
+
+</script>
+
+<br>
+<br>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+// CC 0.3: Le rectangle contouré
+
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  background(0);
+  stroke(100);
+  strokeWeight(4);
+  fill(200);
+  rect(200, 100, 50, 100); // rect(x, y, largeur, hauteur)
+}
+
+//i. Changeons fill() et stroke() pour changer la couleur du rectangle.
+//ii. Quel est le rectangle le plus petit possible ?
+
+</script>
+
+<br>
+<br>
+
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 0.2: la souris
+// CC 0.4: la souris
 
 function setup() {
   createCanvas(500, 500);
@@ -108,7 +155,7 @@ function draw() {
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 0.3: le clic
+// CC 0.5: le clic
 
 function setup() {
   createCanvas(400, 400);
@@ -116,17 +163,38 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed) {
-    rect(mouseX, mouseY, 100, 100); 
+    rect(mouseX, mouseY, 10, 10); 
   }
 }
 
 //i. ...et si on renversait mouseX et mouseY ? 
+//ii. Si le rectangle est tout petit ? 
+
 </script>
 
 <br>
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
-// CC 0.4: la couleur
+// CC 0.6: souris + maths
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  if (mouseIsPressed) { 
+    fill(random(0, 255));   
+    rect(mouseX/4, mouseY+50, 100, 100);
+  }
+}
+
+//
+</script>
+
+<br>
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+// CC 0.7: l'aléatoire
 
 function setup() {
   createCanvas(400, 400);
@@ -143,6 +211,7 @@ function draw() {
 </script>
 <br>
 <br>
+
 <h1>CC0 TP : </h1>
 <br>
 
