@@ -51,7 +51,7 @@ function draw() {
 
 // i. Essayer de changer la taille de la toile
 // ii. Essayer de changer la couleur de l'arrière-plan
-// iii. Qu'est-ce qui se passe si on enleve le point virgule ?
+// iii. Qu'est-ce qui se passe si on enleve l'accolade { ?
 // iv. Comment est-ce qu'on pourrait decrire la couleur autrement (https://p5js.org/reference/#/p5/color) ?
 
 
@@ -62,7 +62,7 @@ function draw() {
 <br>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
-// CC 0.1: ligne et rectangle
+// CC 0.1: Le rectangle
 
 function setup() {
   createCanvas(500, 500);
@@ -70,12 +70,14 @@ function setup() {
 
 function draw() {
   background(220);
-  rect(200, 100, 50, 100); // rect(x, y, largeur)
+  rect(200, 100, 50, 100); // rect(x, y, largeur, hauteur)
 }
 
-//i. Quel effet est-ce que l'ordre des elements  dans le dessin a sur l'image finale ?
-//ii. Essayons d'autres formes de base comme point(), ellipse(), triangle()
-//iii. Ajoutons fill(25) pour changer la couleur du rectangle. Ou est-ce qu'il faut mettre cette ligne ?
+//i. Essayons de faire apparaitre le rectangle ailleurs sur la toile
+//ii. Quel effet est-ce que l'ordre des elements  dans le dessin a sur l'image finale ?
+//iii. Essayons d'autres formes de base comme point(), ellipse(), triangle()
+//iv. Ajoutons fill(25) pour changer la couleur du rectangle. Ou est-ce qu'il faut mettre cette ligne ?
+//v. Quel est le rectangle le plus petit possible ?
 
 
 </script>
