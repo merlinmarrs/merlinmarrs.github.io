@@ -66,7 +66,7 @@ function setup() {
 
 function draw() {
   background(220);
-  ellipse(40, 100, 50); // ellipse(coordoné x, coordoné y, largeur, [hauteur])
+  ellipse(40, 100, 50, 50); // ellipse(coordoné x, coordoné y, largeur, [hauteur])
   line(70, 50, 150, 150); //line(x1, y1, x2, y2)
   rect(200, 100, 50, 100); // rect(x, y, largeur)
   triangle(300, 100, 350, 150, 400, 100); //triangle(x1, y1, x2, y2, x3, y3)
@@ -81,8 +81,8 @@ function setup() {
 }
 
 function draw() {
-  background(220); // Qu'est-ce qui se passe si on mais en commentaire cette ligne ?
-  ellipse(mouseX, mouseY, 50);
+  background(220); // Qu'est-ce qui se passe si on mais en commentaire (avec //) cette ligne ?
+  ellipse(mouseX, mouseY, 50, 50);
 }
 </script>
 
@@ -95,7 +95,7 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed) {
-    ellipse(mouseX, mouseY, 100); 
+    ellipse(mouseX, mouseY, 100, 100); // ...et si on renversait mouseX et mouseY ? 
   }
 }
 </script>
@@ -108,8 +108,8 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed) { 
-    fill(random(0, 255);  
-    ellipse(mouseX, mouseY, 100);
+    fill(random(0, 255)); // ...et si on choisissait rouge, bleue et vert d'une manière aléatoire ?   
+    ellipse(mouseX, mouseY, 100, 100);
   }
 }
 </script>
