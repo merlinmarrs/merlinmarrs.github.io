@@ -73,6 +73,56 @@ function draw() {
 
 </script>
 
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 1.1: for
+// Auteur : Steve's Makerspace
+
+function setup() {
+  createCanvas(500,500);
+  fill(0);
+  strokeWeight(3);
+  rectMode(CENTER);
+  let space = 50;
+  for (x=0;x<width+50;x+=space){
+    for (y=0;y<height+50;y+=space){
+      line(x,y,x+space,y);
+      line(x,y,x,y+space);
+      //square(x,y,10)
+      //square(x+space/2,y+space/2,10)
+    }
+  }
+}
+// i. 
+// ii. 
+// iii. 
+// iv. 
+
+</script>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+//  Auteur : ajithranka
+// Max value to offset rectangles by.
+var maxOffset = 30
+
+function setup() {
+  createCanvas(400, 400)
+  rectMode(CENTER)
+  noLoop()
+}
+
+function draw() {
+  background(255)
+  
+  for (var size = 10; size < 300; size += 10) {
+    var offsetX = random(-maxOffset, maxOffset)
+    var offsetY = random(-maxOffset, maxOffset)
+    
+    noFill()
+    rect(width/2 + offsetX, height/2 + offsetY, size, size)
+  }
+}
+</script>
 <br>
 <br>
 
