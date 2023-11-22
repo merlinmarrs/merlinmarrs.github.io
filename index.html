@@ -38,20 +38,22 @@ p    {font-family: courier;font-size: 100%;}
 
 <h1>Les bases de l'informatique </h1>
 
-<img src="CC0_01.jpg" alt="Une Variable"> 
+<img src="CC0-01.jpg" alt="Une Variable"> 
 
-<img src="CC0_02.jpg" alt="Une Variable"> 
+<img src="CC0-02.jpg" alt="Une Variable"> 
 
-<img src="CC0_03.jpg" alt="Une Variable"> 
+<img src="CC0-03.jpg" alt="Une Variable"> 
 
 <h1>La toile, les pixels et les coordonnés </h1>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+//tourne une fois, au démarrage
 function setup() {
   createCanvas(500, 500); // Essayer de changer la taille de la toile
 }
-
+//tourne en boucle, aprés setup()
 function draw() {
+  //instructions de dessin
   background(255, 0, 200); // Essayer de changer la couleur de l'arrière-plan
 }
 </script>
@@ -65,10 +67,10 @@ function setup() {
 
 function draw() {
   background(220);
-  ellipse(50, 100, 50);
-  line(100, 50, 150, 150);
-  rect(200, 100, 50, 50);
-  triangle(300, 100, 350, 150, 400, 100);
+  ellipse(50, 100, 50); // ellipse(coordoné x, coordoné y, largeur, [hauteur])
+  line(100, 50, 150, 150); //line(x1, y1, x2, y2)
+  rect(200, 100, 50, 50); // rect(x, y, largeur)
+  triangle(300, 100, 350, 150, 400, 100); //triangle(x1, y1, x2, y2, x3, y3)
 }
 </script>
 </body>
