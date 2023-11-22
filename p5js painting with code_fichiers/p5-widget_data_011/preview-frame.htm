@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+<title>Preview</title>
+<link rel="stylesheet" href="blob:https://toolness.github.io/c9d43ee6-d724-4f7f-bda8-57b9cfa4d52a"><!-- base href="https://andreasref.github.io/p5js/null" --></head><body>
+  <script src="preview-frame_data/preview-frame.bundle.js"></script>
+
+<script>let brushMode = 1;
+
+function setup() {
+  createCanvas(500, 500);
+  background(220);
+  rectMode(CENTER);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    myBrush(mouseX, mouseY);
+  }
+}
+
+function myBrush(x, y) {
+  if (brushMode == 1) {
+    ellipse(random(x-20, x+20), random(y-20, y+20), random(5,25));
+  } else if (brushMode == 2) {
+    line(random(x-20, x+20), random(y-20, y+20), random(x-20, x+20), random(y-20, y+20));
+  } else if (brushMode == 3) {
+    rect(x, y, random(10, 50), random(10, 50));
+  }
+}
+
+function keyTyped() {
+  if (key == ' ') {
+   background(220); 
+  } else if (key == '1') {
+   brushMode = 1;
+  } else if (key == '2') {
+   brushMode = 2;
+  } else if (key == '3') {
+   brushMode = 3;
+  } 
+}</script><script src="preview-frame_data/p5.js"></script><canvas id="defaultCanvas0" class="p5Canvas" style="width: 500px; height: 500px;" width="500" height="500"></canvas></body></html>
