@@ -38,7 +38,9 @@ p    {font-family: courier;font-size: 100%;}
 
 
 
-<h1>La toile, les pixels et les coordonnés </h1>
+<h1>La toile et les coordonnés de pixels </h1>
+
+<img src="grille.jpg" alt="Grille"> 
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 //tourne une fois, au démarrage
@@ -71,9 +73,50 @@ function draw() {
 }
 </script>
 
+<h1> La souris et le background </h1>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  background(220); // Qu'est-ce qui se passe si on mais en commentaire cette ligne ?
+  ellipse(mouseX, mouseY, 50);
+}
+</script>
+
+<h1> Le clic </h1>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    ellipse(mouseX, mouseY, 100); 
+  }
+}
+</script>
+<h1> L'aléatoire </h1>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  if (mouseIsPressed) { 
+    fill(random(0, 255);  
+    ellipse(mouseX, mouseY, 100);
+  }
+}
+</script>
+
 <h1>CC0 TP : </h1>
 
- <h2>Crée un code à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+ <h2>Créez un code à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
 
  Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
 
