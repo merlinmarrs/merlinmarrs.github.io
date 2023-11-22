@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<!-- <script type="text/p5" src="C:/Users/jm225306/OneDrive - De Vinci/Documents/GitHub/merlinmarrs.github.io/test/example.js"></script> -->
+<head>
+<style>
+body {font-family: courier;}
+h1   {font-family: courier;font-size: 150%;}
+h2   {font-family: courier;font-size: 120%;}
+p    {font-family: courier;font-size: 100%;}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Créatif</title>
+	<h1>CC1: if et for </h1>
+    <nav>
+        <ul>
+		    <li><a href="index.html">CC0</a></li>
+            <li><a href="1.html">CC1</a></li>
+            <li><a href="2.html">CC2</a></li>
+            <li><a href="3.html">CC3</a></li>
+            <li><a href="4.html">CC4</a></li>
+            <li><a href="5.html">CC5</a></li>
+			<li><a href="6.html">CC6</a></li>
+            <li><a href="7.html">CC7</a></li>
+            <li><a href="8.html">CC8</a></li>
+            <li><a href="9.html">CC9</a></li>
+
+        </ul>
+        </nav>
+        
+</head>
+<body>
+
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 0.0: la toile
+
+
+function setup() {
+    background(255);
+    createCanvas(400, 400);
+    x = width/2; // width est une variable qui contient la largeur de la toile
+    y = height/2; // height est une variable qui contient l'hauteur de la toile
+}
+
+function draw() {
+  
+    stroke(1);
+    point(x,y);
+
+  var choice = int(random(0,4)); // choisir entre 0,1, 2 ou 3
+  
+      if (choice == 0) {
+      x++;
+    } else if (choice == 1) {
+      x--;
+    } else if (choice == 2) {
+      y++;
+    } else {
+      y--;
+    }
+  }
+
+// i. 
+// ii. 
+// iii. 
+// iv. 
+
+
+
+</script>
+
+<br>
+<br>
+
+<h1>CC1 TP : </h1>
+<br>
+
+ <h2>Créez un code qui utilise if ou for à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+
+ Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
+ 
+<h2>Cheat Sheet <a href="https://bmoren.github.io/p5js-cheat-sheet/fr.html">ici</a></h2>
+<br>
+
+<h2>P5js documentation <a href="https://p5js.org/reference/">ici</a></h2>
+<br>
+
+
+</body>
+</html>
