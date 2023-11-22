@@ -35,7 +35,19 @@ p    {font-family: courier;font-size: 100%;}
 
 <h1>Inscrivez-vous et coder sur p5js <a href="https://editor.p5js.org/">ici</a></h1>
 <br>
-
+<br>
+<h2>createCanvas()</h2>
+<br>
+<h2>background()</h2>
+<br>
+<h2>rect(), ellipse(), etc.</h2>
+<br>
+<h2>stroke()</h2>
+<br>
+<h2>fill()</h2>
+<br>
+<h2>strokeWeight()</h2>
+<br>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
@@ -68,6 +80,7 @@ function draw() {
 
 function setup() {
   createCanvas(500, 500);
+  rectMode(CENTER);
 }
 
 function draw() {
@@ -78,6 +91,7 @@ function draw() {
 //i. Essayons de faire apparaitre le rectangle ailleurs sur la toile
 //ii. Quel effet est-ce que l'ordre des elements  dans le dessin a sur l'image finale ?
 //iii. Essayons d'autres formes de base comme point(), ellipse(), triangle()
+///iv. rectMode(CORNER) ?
 
 
 
@@ -183,8 +197,7 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed) { 
-    fill(random(0, 255));   
-    rect(mouseX/4, mouseY+50, 100, 100);
+    rect(mouseX/2, mouseY*2, 100, 100);
   }
 }
 
@@ -194,7 +207,7 @@ function draw() {
 <br>
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
-// CC 0.7: l'aléatoire
+// CC 0.7: couleur aléatoire
 
 function setup() {
   createCanvas(400, 400);
@@ -208,6 +221,20 @@ function draw() {
 }
 
 // i. ...et si on choisissait rouge, bleue et vert d'une manière aléatoire ? 
+</script>
+<br>
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+// CC 0.8: position aléatoire
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  fill(random(0, 255));   
+  ellipse(random(0, 100), random(0, 100), random(10, 100));
+}
 </script>
 <br>
 <br>
