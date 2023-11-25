@@ -13,7 +13,7 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC1: if et for </h1>
+	<h1>CC1: for </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">CC0</a></li>
@@ -32,6 +32,28 @@ p    {font-family: courier;font-size: 100%;}
         
 </head>
 <body>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+let c;
+
+function setup() {
+  createCanvas(510, 510);
+  noLoop();
+  c = random(0,255);
+}
+function draw() {
+noStroke();
+for (let i = 0; i < 255; i++) {
+  for (let j = 0; j < 255; j++) {
+    stroke(i, j, c);
+    point(i, j);
+  }
+}
+}
+</script>
+
+<br>
+<br>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
@@ -59,7 +81,8 @@ function setup() {
 // iv. 
 
 </script>
-
+<br>
+<br>
 <script type="text/p5" data-height="600" data-preview-width="600">
 //  Auteur : ajithranka
 // Max value to offset rectangles by.
