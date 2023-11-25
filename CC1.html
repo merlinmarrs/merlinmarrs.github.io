@@ -55,13 +55,13 @@ function draw() {
   var choice = int(random(0,4)); // choisir entre 0,1, 2 ou 3
   
       if (choice == 0) {
-      x++;
+      x=x+3;
     } else if (choice == 1) {
-      x--;
+      x=x-3;
     } else if (choice == 2) {
-      y++;
+      y=y+3;
     } else {
-      y--;
+      y=y-3;
     }
   }
 
@@ -124,8 +124,8 @@ function setup() {
     for (y=0;y<height+50;y+=space){
       line(x,y,x+space,y);
       line(x,y,x,y+space);
-      //square(x,y,10)
-      //square(x+space/2,y+space/2,10)
+      //rect(x,y,10,10)
+      //rect(x+space/2,y+space/2,10,10)
     }
   }
 }
@@ -139,23 +139,23 @@ function setup() {
 <script type="text/p5" data-height="600" data-preview-width="600">
 //  Auteur : ajithranka
 // Max value to offset rectangles by.
-var maxOffset = 30
+var maxOffset = 30;
 
 function setup() {
-  createCanvas(400, 400)
-  rectMode(CENTER)
-  noLoop()
+  createCanvas(400, 400);
+  rectMode(CENTER);
+  noLoop();
 }
 
 function draw() {
   background(255)
   
   for (var size = 10; size < 300; size += 10) {
-    var offsetX = random(-maxOffset, maxOffset)
-    var offsetY = random(-maxOffset, maxOffset)
+    var offsetX = random(-maxOffset, maxOffset);
+    var offsetY = random(-maxOffset, maxOffset);
     
-    noFill()
-    rect(width/2 + offsetX, height/2 + offsetY, size, size)
+    noFill();
+    rect(width/2 + offsetX, height/2 + offsetY, size, size);
   }
 }
 </script>
