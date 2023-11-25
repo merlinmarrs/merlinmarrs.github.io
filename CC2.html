@@ -140,13 +140,13 @@ function setup() {
 
 function draw() { 
   background(255,255,255);
-  let material = materials[int(random(3))];
+  let material = materials[int(random(16))];
 
-  let place = places[int(random(3))];
+  let place = places[int(random(23))];
 
   let lightsource = lightsources[int(random(3))];
 
-  let inhabitant  = inhabitants[int(random(3))];
+  let inhabitant  = inhabitants[int(random(21))];
 
   let s = 'A HOUSE OF ' + material + ' ' + place + ' USING ' +  lightsource + ' INHABITED BY' + ' ' + inhabitant;
   
