@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<!-- <script type="text/p5" src="C:/Users/jm225306/
+OneDrive - De Vinci/Documents/GitHub/merlinmarrs.github.io/test/example.js"></script> -->
+
+<head>
+<style>
+body {font-family: courier;}
+h1   {font-family: courier;font-size: 150%;}
+h2   {font-family: courier;font-size: 120%;}
+p    {font-family: courier;font-size: 100%;}
+</style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Créatif</title>
+	<h1>CC2: text </h1>
+    <nav>
+        <ul>
+		    <li><a href="index.html">CC0</a></li>
+            <li><a href="CC1.html">CC1</a></li>
+            <li><a href="CC2.html">CC2</a></li>
+            <li><a href="CC3.html">CC3</a></li>
+            <li><a href="CC4.html">CC4</a></li>
+            <li><a href="CC5.html">CC5</a></li>
+			<li><a href="CC6.html">CC6</a></li>
+            <li><a href="CC7.html">CC7</a></li>
+            <li><a href="CC8.html">CC8</a></li>
+            <li><a href="CC9.html">CC9</a></li>
+
+        </ul>
+        </nav>
+        
+</head>
+<body>
+
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 5.0: Field Effect
+function setup(){
+    background(255);
+  createCanvas(400,400);
+  noLoop();
+  angleMode(DEGREES);
+  rectMode(CENTER);
+  reset();
+}
+
+function draw() {
+
+}
+
+function mouseClicked() {
+ background(255);
+  reset();
+}
+
+function reset() {
+  let noiseLevel = 255;
+  let noiseScale = 0.001;
+  for (let y = 0; y < height; y += height/10) {
+    for (let x = 0; x < width; x += width/10) {
+      // Scale input coordinates.
+      let nx = noiseScale * x;
+      let ny = noiseScale * y;
+      let nt = noiseScale * frameCount * millis();
+      // Compute noise value.
+      let c = noiseLevel * noise(nx, ny, nt);
+      // Render.
+      
+
+      
+      strokeWeight(5);
+      stroke(c);
+
+      push();
+
+      translate (x, y);
+      rotate(c);
+      rect(0, 0, 25, 1); // THIS MUST BE ZERO FOR TRANSLATE XY TO WORK
+      pop();
+
+    }
+  }
+   }
+  
+
+
+</script>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+//array of square pixels using push and pop
+
+var gridSize = 50;
+
+function setup(){
+ createCanvas(780, 780);
+ background(255);
+ 
+ stroke(0);
+ strokeWeight(1);
+ var padding = gridSize; // even spacing for lines
+ 
+ var rows = height/gridSize;
+ var cols = width/gridSize;
+ 
+ for(var i = 0; i < rows; i++){ // iterate over the # of rows (top to bottom)
+ for(var j = 0; j < cols; j++){ // iterate over the # of columns (left to right)
+ 
+ push();
+ translate(j*gridSize, i*gridSize); // move to grid location
+ fill(random(255));
+ rect(j,i, j+gridSize, i+gridSize);
+ 
+ pop();
+ }
+ }
+}
+
+
+</script>
+
+<br>
+<br>
+
+
+<h1>CC5 TP : </h1>
+<br>
+
+ <h2>Créez un code qui utilise push et pop à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+
+ Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
+ 
+<h2>Cheat Sheet <a href="https://bmoren.github.io/p5js-cheat-sheet/fr.html">ici</a></h2>
+<br>
+
+<h2>P5js documentation <a href="https://p5js.org/reference/">ici</a></h2>
+<br>
+
+
+</body>
+</html>
