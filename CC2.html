@@ -164,9 +164,9 @@ function mousePressed(){
 
 // CC 2.2: Love Letter Generator
 
-var one = ["DARLING", "DEAR", "HONEY", "JEWEL"];
+var ones = ["DARLING", "DEAR", "HONEY", "JEWEL"];
 
-var two = ["DUCK", "LOVE", "MOPPET", "SWEETHEART"];
+var twos = ["DUCK", "LOVE", "MOPPET", "SWEETHEART"];
 
 var adjectives = ["ADORABLE", "AFFECTIONATE", "AMOROUS", "ANXIOUS", "ARDENT", "AVID", "BREATHLESS", "BURNING", "COVETOUS", "CRAVING", "CURIOUS", "DARLING", "DEAR", "DEVOTED", "EAGER", "EROTIC", "FERVENT", "FOND", "IMPATIENT", "KEEN", "LITTLE", "LOVEABLE", "LOVESICK", "LOVING", "PASSIONATE", "PRECIOUS", "SWEET", "SYMPATHETIC", "TENDER", "UNSATISFIED", "WISTFUL"];
 
@@ -186,7 +186,20 @@ function setup() {
 function draw() { 
   background(255,255,100);
   
-let s = 'MY' + ' ' + random(one) + ' ' + random(two) + '\n' + '\n' + 'MY' + ' ' + random(adjectives) + ' ' + random(nouns) + ' ' + random(adverbs) + ' '  + random(verbs) + ' ' + 'YOUR' + ' ' + random(adjectives) + ' ' + random(nouns) + '.' + '\n' + '\n' + 'YOURS' + ' ' + random(adverbs) + ' ' + '\n' + 'M.U.C.';
+let one = ones[int(random(3))];
+  
+let two = twos[int(random(3))];
+
+let adjective = adjectives[int(random(30))];
+
+let noun = nouns[int(random(30))];
+
+let adverb = adverbs[int(random(20))];
+
+let verb = verbs[int(random(24))];
+
+  
+let s = 'MY' + ' ' + one + ' ' + two + '\n' + '\n' + 'MY' + ' ' + adjective + ' ' + noun + ' ' + adverb + ' '  + verb + ' ' + 'YOUR' + ' ' + adjective + ' ' + noun + '.' + '\n' + '\n' + 'YOURS' + ' ' + adverb + ' ' + '\n' + 'M.U.C.';
   
   
 text(s, 100, 200, 200, 200); // Text wraps within text box
