@@ -39,15 +39,14 @@ p    {font-family: courier;font-size: 100%;}
 <script type="text/p5" data-height="600" data-preview-width="600">
 
 
-int duration = 700;
-int pause = 500;
-int speakerPin = 8;
+let duration = 700;
+let pause = 500;
 
                      // 36 notes; A3 220 - Gsharp6 1661 in semitones
-int notes [] =      {220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661}; 
+let notes [] =      {220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661}; 
 
                      //The seven modes starting from I Ionian going to  VII Locrian
-int scales [][15] = { 
+let scales [][15] = { 
   	                {0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24 },
                     {0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19, 21, 22, 24 },
                     {0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19, 20, 22, 24 },
@@ -58,7 +57,7 @@ int scales [][15] = {
 };
 
                      // some standard chord progressions
-int chordProgressions [][4] = { 
+let chordProgressions [][4] = { 
   
   				    {0, 3, 4, 4 },
                     {0, 0, 3, 4 },
@@ -72,65 +71,20 @@ int chordProgressions [][4] = {
 
 };
 
-void setup() {
+function setup() {
   
-  Serial.begin(9600); 
-  pinMode(speakerPin, OUTPUT);
-  randomSeed(analogRead(0));
+  createCanvas(450, 450);
+  noLoop();
 }
 
-void loop() {
+function loop() {
    
-  int randomRootNote = random(11); // pick a random root note. Only chosing from the first 12 notes so that we don't go out of bounds if we take this note + 5 in the future for example...
-  int randomScale [15];  // create array to take the random scale
-  int randomChordProgression [4];   // create array to take the random chord progression
+  let randomRootNote = random(11); // pick a random root note. Only chosing from the first 12 notes so that we don't go out of bounds if we take this note + 5 in the future for example...
+  let randomScale [15];  // create array to take the random scale
+  let randomChordProgression [4];   // create array to take the random chord progression
   
-  int myNotes[15]; // create array to take the notes in our random scale with the random root note
+  let myNotes[15]; // create array to take the notes in our random scale with the random root note
     
-  Serial.println("Random root frequency is: ");
-  Serial.println(notes[randomRootNote]);
- 
-    delay(100);
-  
-  Serial.println("All available notes: ");  
-
-    
-         for (int  i = 0; i < 36; i++) // There is no way in arduino to copy an entire array; doing it element by element here
-   {     
-     Serial.println(notes [i]); 
-   }
-  
-   Serial.println("Random scale is: "); 
-     int randomNumber = random(7); // random number for randomScale loop below
-     for (int  i = 0; i < 15; i++) // There is no way in arduino to copy an entire array; doing it element by element here
-   {     
-     randomScale[i] = scales[randomNumber][i];
-     Serial.println(randomScale[i]);
-   }
-
-/*
- *
- *
- *
- * Fill randomChordProgression with a random Chord Progression and print the results to the serial monitor
- *
- *
- *
- *
- */
-
-     delay(100);
-   
-    Serial.println("Random chord progression is:");
-  
-    randomNumber = random(8); // random number for randomChordProgression loop below 
-     for (int  i = 0; i < 4; i++) // There is no way in arduino to copy an entire array; doing it element by element here
-   {     
-     randomChordProgression[i] = chordProgressions[randomNumber][i];
-     Serial.println(randomChordProgression[i]);
-   }
-    delay(100);
-
 
 /*
  *
@@ -143,17 +97,13 @@ void loop() {
  *
  */
 
-  
-      Serial.println("note frequencies in random scale are: ");
-  
-      for (int  i = 0; i < 15; i++) // There is no way in arduino to copy an entire array; doing it element by element here
+ 
+      for (let  i = 0; i < 15; i++) // There is no way in arduino to copy an entire array; doing it element by element here
    {     
       myNotes[i] = notes[randomRootNote + randomScale[i]];
-      Serial.println(myNotes[i]);
+
    }
   
-    delay(100);
-
 /*
  *
  *
@@ -165,40 +115,23 @@ void loop() {
  *
  */
 
-  
-  for (int loops = 0; loops < 2; loops++){
+  for (let loops = 0; loops < 2; loops++){
     
-  for (int i = 0; i < 4; i++) // plays the triads of the chord progression
+  for (let i = 0; i < 4; i++) // plays the triads of the chord progression
   {
    
-   int triad [3] = {0, 0, 0};
+   let triad [3] = {0, 0, 0};
    triad[0] = myNotes[randomChordProgression[i]];      //root note
    triad[1] = myNotes[randomChordProgression[i] + 2];  // third
    triad[2] = myNotes[randomChordProgression[i] + 4] ; // fifth
    
-   Serial.println("The current chord in the chord progression is");
-   Serial.println(randomChordProgression[i]);
-    
+   
+   tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
  
-   Serial.println("The notes in this triad are :");
-    
-   Serial.println(triad[0]);  
-   Serial.println(triad[1]);
-   Serial.println(triad[2]);
-
-    
-
    tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
-   delay(random(100, pause));  
   
    tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
-   delay(random(100, pause));   
-  
-   tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
-   delay(random(100, pause));  
-    
-   noTone(speakerPin);
-    delay(100);
+
    }
   }
 
@@ -209,10 +142,48 @@ void loop() {
 
 <br>
 
-<h1>CC3 TP : </h1>
+<script src="path/to/p5.sound.js"></script>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+let polySynth;
+
+function setup() {
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(playSynth);
+  background(220);
+  text('click to play', 20, 20);
+
+  polySynth = new p5.PolySynth();
+}
+
+function playSynth() {
+  userStartAudio();
+
+  // note duration (in seconds)
+  let dur = 1.5;
+
+  // time from now (in seconds)
+  let time = 0;
+
+  // velocity (volume, from 0 to 1)
+  let vel = 0.1;
+
+  // notes can overlap with each other
+  polySynth.play('G2', vel, 0, dur);
+  polySynth.play('C3', vel, time += 1/3, dur);
+  polySynth.play('G3', vel, time += 1/3, dur);
+}
+
+</script>
+<br>
 <br>
 
- <h2>Créez un code qui utilise sin ou cos à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+
+<h1>CC4 TP : </h1>
+<br>
+
+ <h2>Créez un code qui genère de la musique à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
 
  Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
  
