@@ -16,7 +16,7 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC2: text </h1>
+	<h1>CC5: translate push + pop </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">CC0</a></li>
@@ -127,6 +127,43 @@ function setup(){
 <br>
 <br>
 
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+//bouncing ball demo (Patt Vira !)
+
+
+let counter;
+
+function setup(){
+  createCanvas(600,300);
+    background(255,210,210);
+counter =0;
+}
+
+
+function draw(){
+
+  x = mouseX;
+  y = mouseY;
+  
+  counter += 0.1;
+  if(counter > 100){
+    counter = 0.1;
+  }
+  translate(width/2,height/2);
+  rotate(counter),
+  rectMode(CENTER);
+  rect(width/6,height/6, random(100),random(100));
+
+  
+}
+
+
+
+</script>
+
+<br>
+<br>
 
 <h1>CC5 TP : </h1>
 <br>
