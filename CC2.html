@@ -132,13 +132,6 @@ var  lightsources = ['CANDLES', 'ALL AVAILABLE LIGHTING', 'ELECTRICITY', 'NATURA
 
 var  inhabitants = ['PEOPLE WHO SLEEP VERY LITTLE', 'VEGETARIANS', 'HORSES AND BIRDS', 'PEOPLE SPEAKING MANY LANGUAGES WEARING LITTLE OR NO CLOTHING', 'ALL RACES OF MEN REPRESENTED WEARING PREDOMINANTLY RED CLOTHING', 'CHILDREN AND OLD PEOPLE', 'VARIOUS BIRDS AND FISH', 'LOVERS', 'PEOPLE WHO ENJOY EATING TOGETHER', 'PEOPLE WHO EAT A GREAT DEAL', 'COLLECTORS OF ALL TYPES', 'FRIENDS AND ENEMIES', 'PEOPLE WHO SLEEP ALMOST ALL THE TIME', 'VERY TALL PEOPLE', 'AMERICAN INDIANS', 'LITTLE BOYS', 'PEOPLE FROM MANY WALKS OF LIFE', 'NEGROS WEARING ALL COLORS', 'FRIENDS', 'FRENCH AND GERMAN SPEAKING PEOPLE', 'FISHERMEN AND FAMILIES', 'PEOPLE WHO LOVE TO READ'];
 
-let material = materials[int(random(3))];
-
-let place = places[int(random(3))];
-
-let lightsource = lightsources[int(random(3))];
-
-let inhabitant  = inhabitants[int(random(3))];
 
 function setup() { 
   createCanvas(450, 450);
@@ -147,6 +140,13 @@ function setup() {
 
 function draw() { 
   background(255,255,255);
+  let material = materials[int(random(3))];
+
+  let place = places[int(random(3))];
+
+  let lightsource = lightsources[int(random(3))];
+
+  let inhabitant  = inhabitants[int(random(3))];
 
   let s = 'A HOUSE OF ' + material + ' ' + place + ' USING ' +  lightsource + ' INHABITED BY' + ' ' + inhabitant;
   
