@@ -35,15 +35,14 @@ p    {font-family: courier;font-size: 100%;}
 </head>
 <body>
 
-<script type="text/p5" src="static/trig.js"></script>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-
+  //ellipse(centerX, centerY, 10, 10);
 
 var radius = 150;
 var angle = 0;
-var speed = 200;
+var speed = 200; // changez cette valeur pour voir des effets differents 
 var centerX = 200;
 var centerY = 200;
 var t;
@@ -52,9 +51,9 @@ let slider;
 
 function setup() { 
   
-    slider = createSlider(0, 360);
-  slider.position(10, 10);
-  slider.style('width', '80px');
+ //   slider = createSlider(0, 360);
+ // slider.position(10, 10);
+ // slider.style('width', '80px');
   
     createCanvas(400, 400);
     background(220);
@@ -63,14 +62,10 @@ function setup() {
 
 function draw() { 
   
-  if(speed !=slider.value()) {
-    background(220);
-  }
-  speed = slider.value();
-
- t++
-  //ellipse(centerX, centerY, 10, 10);
-  
+ // if(speed !=slider.value()) {
+  //  background(220);
+ // }
+    t++
     var x = centerX + radius * cos(angle-t);
 	var y = centerY + radius * sin(angle+t);
   
