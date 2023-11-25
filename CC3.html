@@ -36,6 +36,7 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 
 
+
 <script type="text/p5" data-height="600" data-preview-width="600">
 
   //ellipse(centerX, centerY, 10, 10);
@@ -74,6 +75,106 @@ function draw() {
 
   angle = angle + speed;
 }
+</script>
+<br>
+
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+let xcor;
+let ycor;
+let t ;
+
+//frequencies:
+let f1 ;
+let f2 ;
+let f3 ;
+let f4 ;
+
+//decay constants or damping values
+let d1 ;
+let d2 ;
+let d3 ;
+let d4 ;
+
+//phase shifts
+let p1 ;
+let p2 ;
+let p3 ;
+let p4 ;
+
+function setup(){
+createCanvas(400,400);
+xcor = width/2;
+ycor = height/2;
+
+ t = 0;
+
+//frequencies:
+ f1 = 2.01;
+ f2 = 3;
+ f3 = 3;
+ f4 = 2;
+
+//decay constants or damping values
+d1 = 0.0085;
+ d2= 0;
+ d3 = 0.065;
+ d4 = 0;
+
+//phase shifts
+ p1 = 0;
+ p2 = 7*PI/16;
+ p3 = 0;
+ p4 = 0;
+}
+
+function  draw(){
+//background(255);
+fill(255,0,0);
+
+xcor = width/2 + 100 * sin(f1*(t-p1)) * exp(-d1*t) + 100 * sin(f2*(t-p2)) * exp(-d2*t); //oscillate horizontally
+ycor = height/2 + 100 * cos(f3*(t-p3)) * exp(-d3*t) + 100 * cos(f4*(t-p4)) * exp(-d4*t); //oscillate vertically
+ellipse(xcor,ycor,2,2); //dot to draw
+t += 0.01; 
+}
+
+</script>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+var radius = 100;
+var angle = 0;
+var speed = 200;
+var t = 1 ;
+
+
+function setup() {
+  createCanvas(400, 400);
+  angleMode(DEGREES);
+}
+
+function draw() {
+  background(255);
+    
+	for (var x = 0; x < width+1; x += width / 50) {
+		for (var y = 0; y < height+1; y += height / 50) {
+			//stroke(0);
+			strokeWeight(1);
+          
+          t = millis()/1000 ;
+              var q = 10*cos(angle-t);
+            
+          stroke(q);
+            noFill();
+			circle(height/2,width/2,y*q);
+          
+      
+            angle = angle + speed;
+          
+		}
+	}
+
+}
+
 </script>
 <br>
 
