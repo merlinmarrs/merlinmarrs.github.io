@@ -94,7 +94,7 @@ function draw() {
   textAlign(CENTER);
   background(0);
 
-let face = random(forehead) + '\n' + random(eyes) + '\n' + random(nose) + '\n' + random(mouth) + '\n' + random(chin);
+let face = int(random(forehead)) + '\n' + int(random(eyes)) + '\n' + int(random(nose)) + '\n' + int(random(mouth)) + '\n' + int(random(chin));
   
 fill(255);
 text(face, height/2, width/4); // Text wraps within text box
