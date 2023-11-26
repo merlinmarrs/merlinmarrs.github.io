@@ -153,67 +153,11 @@ function draw() {
 
 
 </script>
-<br>
-<br>
-<script type="text/p5" data-height="600" data-preview-width="600">
-
-// CC 0.5: le clic
-
-function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  if (mouseIsPressed) {
-    rect(mouseX, mouseY, 10, 10); 
-  }
-}
-
-//i. ...et si on renversait mouseX et mouseY ? 
-//ii. Si le rectangle est tout petit ? 
-
-</script>
 
 <br>
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
-// CC 0.6: souris + maths
-
-function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  if (mouseIsPressed) { 
-    rect(mouseX/2, mouseY*2, 100, 100);
-  }
-}
-
-//
-</script>
-
-<br>
-<br>
-<script type="text/p5" data-height="600" data-preview-width="600">
-// CC 0.7: couleur aléatoire
-
-function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  if (mouseIsPressed) { 
-    fill(random(0, 255));   
-    rect(mouseX, mouseY, 100, 100);
-  }
-}
-
-// i. ...et si on choisissait rouge, bleue et vert d'une manière aléatoire ? 
-</script>
-<br>
-<br>
-<script type="text/p5" data-height="600" data-preview-width="600">
-// CC 0.8: position aléatoire
+// CC 0.5: position aléatoire
 
 function setup() {
   createCanvas(400, 400);

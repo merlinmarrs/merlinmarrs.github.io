@@ -37,107 +37,52 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 
 
+
+
+function setup() {
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(playOscillator);
+  osc = new p5.Oscillator(300);
+  background(220);
+  text('tap to play', 20, 20);
+}
+
+function playOscillator() {
+  osc.start();
+  osc.amp(0.5);
+  // start at 700Hz
+  osc.freq(700);
+  // ramp to 60Hz over 0.7 seconds
+  osc.freq(60, 0.7);
+  osc.amp(0, 0.1, 0.7);
+}
+
 <script type="text/p5" data-height="600" data-preview-width="600">
 
 
-let duration = 700;
-let pause = 500;
-
-                     // 36 notes; A3 220 - Gsharp6 1661 in semitones
-let notes [] =      {220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661}; 
-
-                     //The seven modes starting from I Ionian going to  VII Locrian
-let scales [][15] = { 
-  	                {0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24 },
-                    {0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19, 21, 22, 24 },
-                    {0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19, 20, 22, 24 },
-                    {0, 2, 4, 6, 7, 9, 11, 12, 14, 16, 18, 19, 21, 23, 24 },
-                    {0, 2, 4, 5, 7, 9, 10, 12, 14, 16, 17, 19, 21, 22, 24 },
-                    {0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 19, 20, 22, 24 },
-                    {0, 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18, 20, 22, 24 },
-};
-
-                     // some standard chord progressions
-let chordProgressions [][4] = { 
-  
-  				    {0, 3, 4, 4 },
-                    {0, 0, 3, 4 },
-                    {0, 3, 4, 3 },                  
-                    {0, 3, 1, 4 },
-                    {0, 3, 4, 0 },
-                    {0, 1, 4, 0 },                  
-                    {0, 5, 3, 4 },
-                    {0, 3, 5, 4 },
-                    {0, 4, 5, 3 },                     
-
-};
+let osc;
+let playing;
+let notes = [220, 233, 247, 262, 277, 294, 311, 330, 349, 370, 392, 415, 440, 466, 494, 523, 554, 587, 622, 659, 698, 740, 784, 831, 880, 932, 988, 1047, 1109, 1175, 1245, 1319, 1397, 1480, 1568, 1661];
 
 function setup() {
-  
-  createCanvas(450, 450);
-  noLoop();
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(playOscillator);
+  osc = new p5.Oscillator(300);
+  background(220);
+  text('tap to play', 20, 20);
 }
 
-function loop() {
-   
-  let randomRootNote = random(11); // pick a random root note. Only chosing from the first 12 notes so that we don't go out of bounds if we take this note + 5 in the future for example...
-  let randomScale [15];  // create array to take the random scale
-  let randomChordProgression [4];   // create array to take the random chord progression
+function playOscillator() {
   
-  let myNotes[15]; // create array to take the notes in our random scale with the random root note
+  let start = int(random(35));
+  let rootnote = notes[start];
+
+  osc.start();
+
+  osc.amp(0.5);
+  osc.freq(rootnote);
     
-
-/*
- *
- *
- *
- * Fill myNotes with the notes in the randomly chosen scale starting at the randomly chosen root note and print the results to the serial monitor.
- *
- *
- *
- *
- */
-
- 
-      for (let  i = 0; i < 15; i++) // There is no way in arduino to copy an entire array; doing it element by element here
-   {     
-      myNotes[i] = notes[randomRootNote + randomScale[i]];
-
-   }
-  
-/*
- *
- *
- *
- * Create a loop which plays notes in the triad (root note, root note + 3 semitones, root notes + 5 semitones) randomly of each chord in the selected chord progression. (Reminder: all triads will be notes from myNotes)
- * The duration of each note and the duration of each pause should also be random within a range you select. It should also be possible to control how many times this process is repeated.
- * 
- * Hint: You could create an array called Triad to hold the notes from triads built from myNotes defined by the randomChordProgression.
- *
- */
-
-  for (let loops = 0; loops < 2; loops++){
-    
-  for (let i = 0; i < 4; i++) // plays the triads of the chord progression
-  {
-   
-   let triad [3] = {0, 0, 0};
-   triad[0] = myNotes[randomChordProgression[i]];      //root note
-   triad[1] = myNotes[randomChordProgression[i] + 2];  // third
-   triad[2] = myNotes[randomChordProgression[i] + 4] ; // fifth
-   
-   
-   tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
- 
-   tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
-  
-   tone(speakerPin, triad[random(2)], random(200, duration)); //plays a random note of the triad
-
-   }
-  }
-
-  
-} 
+}
 </script>
 <br>
 
