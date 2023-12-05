@@ -38,6 +38,27 @@ p    {font-family: courier;font-size: 100%;}
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
+function setup() {
+  createCanvas(600, 600);
+  background(200);
+
+}
+function draw() {
+
+  let x = random(width);
+  let y = random(height);
+
+  strokeWeight(5);
+  point(x, y);
+
+}
+</script>
+
+<br>
+<br>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
 /**
  * Color Variables (Homage to Albers). 
  * 
@@ -52,13 +73,13 @@ let outside;
 
 function setup(){
 
-inside = color(random(100,200), 102, 0);
-middle = color(204, random(100,200), 0);
-outside = color(153, 51, random(100,200));
+inside = color(random(100,200));
+middle = color(random(100,200));
+outside = color(random(100,200));
   
 createCanvas(360, 360);
 noStroke();
-background(51, 0, 0);
+background(0, 0, 0);
 
   }
 
@@ -74,9 +95,10 @@ rect(140, 210, 80, 80);
 
 }
 // i. Pouvez vous choisir d'autres gammes de couleurs en utilisant ce site web http://paletton.com/#uid=50x0u0kk8rrh5lni3kUlKzdmPyx ?
-// ii. 
+// ii. Comment faire changer la position des formes d'une manière aléatoire 
 // iii. 
 // iv.
+
 </script>
 
 <br>
