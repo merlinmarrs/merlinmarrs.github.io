@@ -13,10 +13,10 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC3: if </h1>
+	<h1>CC3: If </h1>
     <nav>
         <ul>
-		    <li><a href="index.html">CC0</a></li>
+		    <!-- <li><a href="index.html">CC0</a></li> -->
             <li><a href="CC1.html">CC1</a></li>
             <li><a href="CC2.html">CC2</a></li>
             <li><a href="CC3.html">CC3</a></li>
@@ -56,44 +56,8 @@ function draw() {
 <br>
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
-// CC 3.1: souris + maths
 
-function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  if (mouseIsPressed) { 
-    rect(mouseX/2, mouseY*2, 100, 100);
-  }
-}
-
-//
-</script>
-
-<br>
-<br>
-<script type="text/p5" data-height="600" data-preview-width="600">
-// CC 3.2: couleur aléatoire
-
-function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  if (mouseIsPressed) { 
-    fill(random(0, 255));   
-    rect(mouseX, mouseY, 100, 100);
-  }
-}
-
-// i. ...et si on choisissait rouge, bleue et vert d'une manière aléatoire ? 
-</script>
-<br>
-<br>
-<script type="text/p5" data-height="600" data-preview-width="600">
-
-// CC 3.3: if
+// CC 3.1: if
 // Auteur : Coding Train 
 
 
@@ -124,58 +88,16 @@ function draw() {
 
 // i. Essayons de varier l'increment (x=x+increment). Quel effet ca a sur l'animation ?
 // ii. Qu'est-ce represente width et height ? Qu'est-ce qui se passe si on change la taille de la toile ?
-// iii. Pourqoui est-ce qu'on utilise int() avec random ? (https://p5js.org/reference/#/p5/random)
+// iii. 
 // iv. Qu'est-ce qui se passe si le chiffre aléatoire est égale à 3 ?
 
 
 
 </script>
-
-<script type="text/p5" data-height="600" data-preview-width="600">
-// CC 3.4: if
-//Auteur : Patt Vira
-
-let x = 100;
-let y = 100;
-let dx = 2;
-let dy = 3;
-
-function setup() {
-  createCanvas(400, 400);
-}
-
-function draw() {
-  background(220);
-  
-  // Draw a Circle
-  fill(255, 210, 0);
-  ellipse(x, y, 25, 25);
-  
-  // Move a Circle
-  x = x + dx;
-  y = y + dy;
-  
-  // Check Boundaries
-  if (x > width || x < 0){
-    dx = dx * -1;
-  }
-  if (y > height || y < 0){
-    dy = dy * -1;
-  }
-}
-
-// i. Qu'est-ce qui se passe si la balle arrive au bords de la toile ?
-// ii. Qu'est ce que -1 fait dans ce code ?
-// iii. Comment est-ce qu'on pourrait changer la vitesse dans une axe de la balle ?
-// iv. Comment ajouter d'autres balles ?
-
-
-</script>
-
 <br>
 <br>
 
-<h1>CC3 TP : IF </h1>
+<h1>CC3 TP : If </h1>
 <br>
 
  <h2>Créez un code qui utilise if à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
