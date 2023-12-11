@@ -39,7 +39,7 @@ p    {font-family: courier;font-size: 100%;}
 // CC 3.0: le clic
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
 }
 
 function draw() {
@@ -57,13 +57,40 @@ function draw() {
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 3.1: if
+
+// CC 3.1: la position de la souris
+
+function setup() { 
+  createCanvas(600, 600);
+} 
+
+function draw() { 
+  
+  if (mouseX < 100){
+    background(255,0,0);
+  } 
+  if (mouseX >= 100){
+    background(0,255,0);
+  } 
+}
+// i. Essayons de changer les conditions.
+// ii. Essayons de modifier les commandes à la place de background.
+
+
+</script>
+
+<br>
+<br>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 3.3: if
 // Auteur : Coding Train 
 
 
 function setup() {
     background(255);
-    createCanvas(400, 400);
+    createCanvas(600, 600);
     x = width/2; // width est une variable qui contient la largeur de la toile
     y = height/2; // height est une variable qui contient l'hauteur de la toile
 }
@@ -88,8 +115,8 @@ function draw() {
 
 // i. Essayons de varier l'increment (x=x+increment). Quel effet ca a sur l'animation ?
 // ii. Qu'est-ce represente width et height ? Qu'est-ce qui se passe si on change la taille de la toile ?
-// iii. 
-// iv. Qu'est-ce qui se passe si le chiffre aléatoire est égale à 3 ?
+// iii. Qu'est-ce qui se passe si le chiffre aléatoire est égale à 3 ?
+ 
 
 
 
