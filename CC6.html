@@ -37,6 +37,12 @@ p    {font-family: courier;font-size: 100%;}
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
+//CC6.0 Calculatrice graphique
+
+function setup() { 
+    createCanvas(400, 400);
+}
+
 function draw() {
   // Invert the y-axis.
   scale(1, -1);
@@ -47,8 +53,8 @@ function draw() {
   point(x, y);
 }
 
-// i. Se on remplace sqrt() par sq(), log(), pow() ?
-// ii. 
+// i. Si on remplace sqrt() par sq(), log(), pow() ?
+// ii.  Si on remplace par une equation comme let y = x*x + .6*x + 1;
 // iii. 
 // iv.
 
@@ -59,7 +65,7 @@ function draw() {
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-//CC6.0 Sinus deux axes
+//CC6.1 Sinus deux axes
 
 var x=0;
 
@@ -88,7 +94,7 @@ function draw() {
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-//CC6.1 Sinus une axe
+//CC6.2 Sinus une axe
 
 let t = 0;
 
@@ -111,7 +117,7 @@ function draw() {
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-//CC6.1 Sinus et Cosinus
+//CC6.3 Sinus et Cosinus
 
  let t=0;
 function setup() { 
