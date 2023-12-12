@@ -37,7 +37,9 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+//5.0 Texte Hello World
 
+//
 function setup() {
   background('skyblue');
   textSize(100);
@@ -48,11 +50,27 @@ function setup() {
 
 <br>
 <br>
-
-
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 2.0: Generateur de <<visage>>
+//5.1 Emoji aléatoire  
+
+//!!! Ce code doit etre executer dans votre editeur p5js !!!
+
+//
+function setup() {
+  createCanvas(600, 600);
+  background('skyblue');
+  textSize(100);
+  text(random(['🌈','🦁', '🐯', '🐻']), width/2, height/2);
+}
+
+</script>
+
+<br>
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 5.2: Generateur de <<visage>>
 // inspiré par Warsim (https://www.gog.com/en/game/warsim_the_realm_of_aslona)
 
 
@@ -136,7 +154,7 @@ function mousePressed(){
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 2.1: House of Dust
+// CC 5.3: House of Dust
 // Auteur : Nick Montfort MIT
 
 var  materials = ['SAND', 'DUST', 'LEAVES', 'PAPER', 'TIN', 'ROOTS', 'BRICK', 'STONE', 'DISCARDED CLOTHING', 'GLASS', 'STEEL', 'PLASTIC', 'MUD', 'BROKEN DISHES', 'WOOD', 'STRAW', 'WEEDS'];
@@ -181,7 +199,7 @@ function mousePressed(){
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 2.2: Love Letter Generator
+// CC 5.4: Love Letter Generator
 // Auteur : Nick Montfort MIT
 
 var ones = ["DARLING", "DEAR", "HONEY", "JEWEL"];
