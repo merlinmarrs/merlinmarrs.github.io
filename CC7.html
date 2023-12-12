@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<script src="//github.com/processing/p5.js-sound/blob/main/lib/p5.sound.js"></script>
+<!-- <script type="text/p5" src="C:/Users/jm225306/OneDrive - De Vinci/Documents/GitHub/merlinmarrs.github.io/test/example.js"></script> -->
+<head>
+<style>
+body {font-family: courier;}
+h1   {font-family: courier;font-size: 150%;}
+h2   {font-family: courier;font-size: 120%;}
+p    {font-family: courier;font-size: 100%;}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Créatif</title>
+	<h1>CC4: Musique concrète et instruments préparé </h1>
+    <nav>
+        <ul>
+		    <li><a href="index.html">CC0</a></li>
+            <li><a href="CC1.html">CC1</a></li>
+            <li><a href="CC2.html">CC2</a></li>
+            <li><a href="CC3.html">CC3</a></li>
+            <li><a href="CC4.html">CC4</a></li>
+            <li><a href="CC5.html">CC5</a></li>
+			<li><a href="CC6.html">CC6</a></li>
+            <li><a href="CC7.html">CC7</a></li>
+            <li><a href="CC8.html">CC8</a></li>
+            <li><a href="CC9.html">CC9</a></li>
+
+        </ul>
+        </nav>
+        
+</head>
+<body>
+
+
+
+
+function setup() {
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(playOscillator);
+  osc = new p5.Oscillator(300);
+  background(220);
+  text('tap to play', 20, 20);
+}
+
+function playOscillator() {
+  osc.start();
+  osc.amp(0.5);
+  // start at 700Hz
+  osc.freq(700);
+  // ramp to 60Hz over 0.7 seconds
+  osc.freq(60, 0.7);
+  osc.amp(0, 0.1, 0.7);
+}
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+
+let mic;
+
+function setup() {
+  createCanvas(710, 200);
+
+  // Create an Audio input
+  mic = new p5.AudioIn();
+
+  // start the Audio Input.
+  // By default, it does not .connect() (to the computer speakers)
+  mic.start();
+}
+
+function draw() {
+  background(200);
+
+  // Get the overall volume (between 0 and 1.0)
+  let vol = mic.getLevel();
+  fill(127);
+  stroke(0);
+
+  // Draw an ellipse with height based on volume
+  let h = map(vol, 0, 1, height, 0);
+  ellipse(width / 2, h - 25, 50, 50);
+}
+
+</script>
+<br>
+
+<br>
+
+<script src="static/p5.sound/lib/p5.sound.js"></script>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+let polySynth;
+
+function setup() {
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(playSynth);
+  background(220);
+  text('click to play', 20, 20);
+
+  polySynth = new p5.PolySynth();
+}
+
+function playSynth() {
+  userStartAudio();
+
+  // note duration (in seconds)
+  let dur = 1.5;
+
+  // time from now (in seconds)
+  let time = 0;
+
+  // velocity (volume, from 0 to 1)
+  let vel = 0.1;
+
+  // notes can overlap with each other
+  polySynth.play('G2', vel, 0, dur);
+  polySynth.play('C3', vel, time += 1/3, dur);
+  polySynth.play('G3', vel, time += 1/3, dur);
+}
+
+</script>
+<br>
+<br>
+
+
+<h1>CC4 TP : </h1>
+<br>
+
+ <h2>Créez un code qui genère de la musique à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+
+ Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
+ 
+<h2>Cheat Sheet <a href="https://bmoren.github.io/p5js-cheat-sheet/fr.html">ici</a></h2>
+<br>
+
+<h2>P5js documentation <a href="https://p5js.org/reference/">ici</a></h2>
+<br>
+
+
+</body>
+</html>
