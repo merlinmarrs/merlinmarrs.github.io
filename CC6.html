@@ -42,17 +42,17 @@ p    {font-family: courier;font-size: 100%;}
 var x=0;
 
 function setup() { 
-    angleMode(DEGREES); // 0 à 360 pas en radians 
-    createCanvas(1000, 250);
+    angleMode(DEGREES); // 0 à 360 (pas en radians)
+    createCanvas(1000, 200);
     background(220);
 }
 
 function draw() { 
   
-    x++;
-	var y = sin(t);
+    x++; // De 0 à 360 en boucle (361° == 1°)
+	var y = 100*sin(x); // fois 100 pour accentuer l'effet de sinus
     strokeWeight(3);
-    point(x, 125 +(y*100));
+    point(x, y + 100); // plus 100 plus deplacer vers le milieu 
 
 }
 // i. Quel est le lien entre ce code et cette animation https://upload.wikimedia.org/wikipedia/commons/b/bd/Sine_and_cosine_animation.gif ?
