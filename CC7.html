@@ -16,7 +16,7 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC4: Musique concrète et instruments préparé </h1>
+	<h1>CC7: Son </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">CC0</a></li>
@@ -39,24 +39,27 @@ p    {font-family: courier;font-size: 100%;}
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
+//CC7.0 Son
+
+//!! * Ce code ne va pas fonctionner sur le site web github.io * !!
+
 function setup() {
-  let cnv = createCanvas(100, 100);
-  cnv.mousePressed(playOscillator);
   osc = new p5.Oscillator(300);
-  background(220);
-  text('tap to play', 20, 20);
 }
 
-function playOscillator() {
-  osc.start();
+function draw(){
+  
+if(mouseIsPressed)
+  {
+  osc.freq(mouseX*10);
   osc.amp(0.5);
-  // start at 700Hz
-  osc.freq(700);
-  // ramp to 60Hz over 0.7 seconds
-  osc.freq(60, 0.7);
-  osc.amp(0, 0.1, 0.7);
+  osc.start(); 
+  }
+  else
+  {  
+    osc.stop(1);
+  }
 }
-
 </script>
 <br>
 
@@ -134,7 +137,7 @@ function playSynth() {
 <br>
 
 
-<h1>CC4 TP : </h1>
+<h1>CC7 TP : </h1>
 <br>
 
  <h2>Créez un code qui genère de la musique à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
