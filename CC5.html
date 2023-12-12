@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-<!-- <script type="text/p5" src="C:/Users/jm225306/
-OneDrive - De Vinci/Documents/GitHub/merlinmarrs.github.io/test/example.js"></script> -->
-
+<!-- <script type="text/p5" src="C:/Users/jm225306/OneDrive - De Vinci/Documents/GitHub/merlinmarrs.github.io/test/example.js"></script> -->
 <head>
 <style>
 body {font-family: courier;}
@@ -11,12 +9,11 @@ h1   {font-family: courier;font-size: 150%;}
 h2   {font-family: courier;font-size: 120%;}
 p    {font-family: courier;font-size: 100%;}
 </style>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC5: texte </h1>
+	<h1>CC4: for </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">CC0</a></li>
@@ -36,202 +33,100 @@ p    {font-family: courier;font-size: 100%;}
 </head>
 <body>
 
-
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 2.0: Generateur de <<visage>>
-// inspiré par Warsim (https://www.gog.com/en/game/warsim_the_realm_of_aslona)
-
-
-var foreheads = 
-[
-  ' ##### ', 
-  '.......', 
-  'iiiii  ', 
-  '^^^^^^^',
-]
-
-var eyes = 
-[
-  '|   @ @  |', 
-  '   o  0  ', 
-  '/   v O  \ ', 
-  '   p  p   ',
-]
-
-var noses = 
-[
-  '|     _    |', 
-  ':    ..  :', 
-  '!   .o   !', 
-  '    --    ',
-]
-
-var mouths = 
-[
-  '\   o  /', 
-  '\  --- /', 
-  '   <=>  ', 
-  '|   -  |',
-]
-
-var chins = 
-[
-  ' __ _ ', 
-  '..__.._.', 
-  ',,.,,..', 
-  ';.;.;.',
-]
-
-
-function setup() { 
-  createCanvas(400, 400);
- noLoop();
-} 
-
-function draw() { 
-  textFont('Courier New');
-  textSize(40);
-  textAlign(CENTER);
-  background(0);
-  
-  forehead = foreheads[int(random(3))];
-  eye = eyes[int(random(3))];
-  nose = noses[int(random(3))];
-  mouth = mouths[int(random(3))];
-  chin = chins[int(random(3))];
-
-let face =  forehead + '\n' + eye + '\n' + nose + '\n' + mouth + '\n' + chin;
-  
-fill(255);
-text(face, height/2, width/4); // Text wraps within text box
-  
+function setup() {
+  background('skyblue');
+  textSize(100);
+  text('🌈', 0, 100);
 }
-function mousePressed(){
- draw();
-}
-
-
-// i. Pouvez vous changer les elements et l'ordre des elements du visage ?
-// ii.  A quoi sert le '\n' ?
-// iii. 
-// iv.
 
 </script>
+
 <br>
 <br>
+
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+let c;
 
-// CC 2.1: House of Dust
-// Auteur : Nick Montfort MIT
-
-var  materials = ['SAND', 'DUST', 'LEAVES', 'PAPER', 'TIN', 'ROOTS', 'BRICK', 'STONE', 'DISCARDED CLOTHING', 'GLASS', 'STEEL', 'PLASTIC', 'MUD', 'BROKEN DISHES', 'WOOD', 'STRAW', 'WEEDS'];
-
-var  places = ['IN A GREEN, MOSSY TERRAIN', 'IN AN OVERPOPULATED AREA', 'BY THE SEA', 'BY AN ABANDONED LAKE', 'IN A DESERTED FACTORY', 'IN DENSE WOODS', 'IN JAPAN', 'AMONG SMALL HILLS', 'IN SOUTHERN FRANCE', 'AMONG HIGH MOUNTAINS', 'ON AN ISLAND', 'IN A COLD, WINDY CLIMATE', 'IN A PLACE WITH BOTH HEAVY RAIN AND BRIGHT SUN', 'IN A DESERTED AIRPORT', 'IN A HOT CLIMATE', 'INSIDE A MOUNTAIN', 'ON THE SEA', 'IN MICHIGAN', 'IN HEAVY JUNGLE UNDERGROWTH', 'BY A RIVER', 'AMONG OTHER HOUSES', 'IN A DESERTED CHURCH', 'IN A METROPOLIS', 'UNDERWATER'];
-
-var  lightsources = ['CANDLES', 'ALL AVAILABLE LIGHTING', 'ELECTRICITY', 'NATURAL LIGHT'];
-
-var  inhabitants = ['PEOPLE WHO SLEEP VERY LITTLE', 'VEGETARIANS', 'HORSES AND BIRDS', 'PEOPLE SPEAKING MANY LANGUAGES WEARING LITTLE OR NO CLOTHING', 'ALL RACES OF MEN REPRESENTED WEARING PREDOMINANTLY RED CLOTHING', 'CHILDREN AND OLD PEOPLE', 'VARIOUS BIRDS AND FISH', 'LOVERS', 'PEOPLE WHO ENJOY EATING TOGETHER', 'PEOPLE WHO EAT A GREAT DEAL', 'COLLECTORS OF ALL TYPES', 'FRIENDS AND ENEMIES', 'PEOPLE WHO SLEEP ALMOST ALL THE TIME', 'VERY TALL PEOPLE', 'AMERICAN INDIANS', 'LITTLE BOYS', 'PEOPLE FROM MANY WALKS OF LIFE', 'NEGROS WEARING ALL COLORS', 'FRIENDS', 'FRENCH AND GERMAN SPEAKING PEOPLE', 'FISHERMEN AND FAMILIES', 'PEOPLE WHO LOVE TO READ'];
-
-
-function setup() { 
-  createCanvas(450, 450);
+function setup() {
+  createCanvas(510, 510);
   noLoop();
-} 
-
-function draw() { 
-  background(255,255,255);
-  let material = materials[int(random(16))];
-
-  let place = places[int(random(23))];
-
-  let lightsource = lightsources[int(random(3))];
-
-  let inhabitant  = inhabitants[int(random(21))];
-
-  let s = 'A HOUSE OF ' + material + ' ' + place + ' USING ' +  lightsource + ' INHABITED BY' + ' ' + inhabitant;
-  
-  text(s, 100, 200, 200, 200); // Text wraps within text box
-  
+  c = random(0,255);
 }
-
-function mousePressed(){
- draw();
+function draw() {
+noStroke();
+for (let i = 0; i < 255; i++) {
+  for (let j = 0; j < 255; j++) {
+    stroke(i, j, c);
+    point(i, j);
+  }
 }
-// i. Pouvez vous écrire d'autres phrases avec ce code?
-// ii. A quoi sert le ' ' ?
-// iii. 
-// iv.
+}
 </script>
+
 <br>
 <br>
+
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 2.2: Love Letter Generator
-// Auteur : Nick Montfort MIT
+// CC 1.2: for
+// Auteur : Steve's Makerspace
 
-var ones = ["DARLING", "DEAR", "HONEY", "JEWEL"];
-
-var twos = ["DUCK", "LOVE", "MOPPET", "SWEETHEART"];
-
-var adjectives = ["ADORABLE", "AFFECTIONATE", "AMOROUS", "ANXIOUS", "ARDENT", "AVID", "BREATHLESS", "BURNING", "COVETOUS", "CRAVING", "CURIOUS", "DARLING", "DEAR", "DEVOTED", "EAGER", "EROTIC", "FERVENT", "FOND", "IMPATIENT", "KEEN", "LITTLE", "LOVEABLE", "LOVESICK", "LOVING", "PASSIONATE", "PRECIOUS", "SWEET", "SYMPATHETIC", "TENDER", "UNSATISFIED", "WISTFUL"];
-
-var nouns = ["ADORATION", "AFFECTION", "AMBITION", "APPETITE", "ARDOUR", "CHARM", "DESIRE", "DEVOTION", "EAGERNESS", "ENCHANTMENT", "ENTHUSIASM", "FANCY", "FELLOW FEELING", "FERVOUR", "FONDNESS", "HEART", "HUNGER", "INFATUATION", "LIKING", "LONGING", "LOVE", "LUST", "PASSION", "RAPTURE", "SYMPATHY", "TENDERNESS", "THIRST", "WISH", "YEARNING"];
-
-var adverbs = ["AFFECTIONATELY", "ANXIOUSLY", "ARDENTLY", "AVIDLY", "BEAUTIFULLY", "BREATHLESSLY", "BURNINGLY", "COVETOUSLY", "CURIOUSLY", "DEVOTEDLY", "EAGERLY", "FERVENTLY", "FONDLY", "IMPATIENTLY", "KEENLY", "LOVINGLY", "PASSIONATELY", "SEDUCTIVELY", "TENDERLY", "WINNINGLY", "WISTFULLY"];
-
-var verbs = ["ADORES", "ATTRACTS", "CARES FOR", "CHERISHES", "CLINGS TO", "DESIRES","HOLDS DEAR", "HOPES FOR", "HUNGERS FOR", "IS WEDDED TO", "LIKES", "LONGS FOR", "LOVES", "LUSTS AFTER", "PANTS FOR", "PINES FOR", "PRIZES", "SIGHS FOR", "TEMPTS", "THIRSTS FOR", "TREASURES", "WANTS", "WISHES", "WOOS", "YEARNS FOR"];
-
-
-function setup() { 
-  createCanvas(450, 450);
-  noLoop();
-
-} 
-
-function draw() { 
-  background(255,255,100);
-  
-let one = ones[int(random(3))];
-  
-let two = twos[int(random(3))];
-
-let adjective = adjectives[int(random(30))];
-
-let noun = nouns[int(random(30))];
-
-let adverb = adverbs[int(random(20))];
-
-let verb = verbs[int(random(24))];
-
-  
-let s = 'MY' + ' ' + one + ' ' + two + '\n' + '\n' + 'MY' + ' ' + adjective + ' ' + noun + ' ' + adverb + ' '  + verb + ' ' + 'YOUR' + ' ' + adjective + ' ' + noun + '.' + '\n' + '\n' + 'YOURS' + ' ' + adverb + ' ' + '\n' + 'M.U.C.';
-  
-  
-text(s, 100, 200, 200, 200); // Text wraps within text box
-  
+function setup() {
+  createCanvas(500,500);
+  fill(0);
+  strokeWeight(3);
+  rectMode(CENTER);
+  let space = 50;
+  for (x=0;x<width+50;x+=space){
+    for (y=0;y<height+50;y+=space){
+      line(x,y,x+space,y);
+      line(x,y,x,y+space);
+      //rect(x,y,10,10)
+      //rect(x+space/2,y+space/2,10,10)
+    }
+  }
 }
-
-function mousePressed(){
- draw();
-}
-
-// i. Pouvez vous écrire d'autres phrases avec ce code?
+// i. 
 // ii. 
 // iii. 
-// iv.
+// iv. 
 
 </script>
+<br>
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+//  Auteur : ajithranka
+// Max value to offset rectangles by.
+var maxOffset = 30;
 
+function setup() {
+  createCanvas(400, 400);
+  rectMode(CENTER);
+  noLoop();
+}
 
+function draw() {
+  background(255)
+  
+  for (var size = 10; size < 300; size += 10) {
+    var offsetX = random(-maxOffset, maxOffset);
+    var offsetY = random(-maxOffset, maxOffset);
+    
+    noFill();
+    rect(width/2 + offsetX, height/2 + offsetY, size, size);
+  }
+}
+</script>
 <br>
 <br>
 
-<h1>CC5 TP : </h1>
+<h1>CC4 TP : </h1>
 <br>
 
- <h2>Créez un code qui utilise du texte à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+ <h2>Créez un code qui utilise for ou for à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
 
  Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
  
