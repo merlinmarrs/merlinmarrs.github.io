@@ -39,7 +39,7 @@ p    {font-family: courier;font-size: 100%;}
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-//CC7.0 Son
+//CC7.0 Son Hello World
 
 //!! * Ce code ne va pas fonctionner sur le site web github.io * !!
 
@@ -51,7 +51,7 @@ function draw(){
   
 if(mouseIsPressed)
   {
-  osc.freq(mouseX*10);
+  osc.freq(100);
   osc.amp(0.5);
   osc.start(); 
   }
@@ -60,6 +60,10 @@ if(mouseIsPressed)
     osc.stop(1);
   }
 }
+
+// i.) Essayons osc.freq(random(1000)) à la place de osc.freg()
+// ii.) Essayons mouseX*10 à la place de osc.freg()
+
 </script>
 <br>
 
@@ -68,31 +72,36 @@ if(mouseIsPressed)
 <script type="text/p5" data-height="600" data-preview-width="600">
 
 
+
+//CC7.1 Micro Hello World
+
+//!! * Ce code ne va pas fonctionner sur le site web github.io * !!
+
 let mic;
 
 function setup() {
   createCanvas(710, 200);
 
-  // Create an Audio input
-  mic = new p5.AudioIn();
-
-  // start the Audio Input.
-  // By default, it does not .connect() (to the computer speakers)
+  mic = new p5.AudioIn(); // créé une instance d'une entrée microphone qui s'appelle <<mic>> 
   mic.start();
 }
 
 function draw() {
   background(200);
 
-  // Get the overall volume (between 0 and 1.0)
+  // Volume du microphone dans la variable <<vol>>
   let vol = mic.getLevel();
   fill(127);
   stroke(0);
 
-  // Draw an ellipse with height based on volume
+  // L'hauteur de l'ellipse corresponde au volume du son sur le microphone
   let h = map(vol, 0, 1, height, 0);
   ellipse(width / 2, h - 25, 50, 50);
 }
+
+
+// i.) Essayons de dessiner une historique de l'audio du microphone ...
+// ii.) 
 
 </script>
 <br>
@@ -103,6 +112,10 @@ function draw() {
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
+//CC7.2 Micro Hello World
+
+//!! * Ce code ne va pas fonctionner sur le site web github.io * !!
+
 let polySynth;
 
 function setup() {
@@ -111,7 +124,7 @@ function setup() {
   background(220);
   text('click to play', 20, 20);
 
-  polySynth = new p5.PolySynth();
+  polySynth = new p5.PolySynth(); // créé une instance d'un synthé polyphonique qui s'appelle <<polySynth>> 
 }
 
 function playSynth() {
@@ -132,15 +145,19 @@ function playSynth() {
   polySynth.play('G3', vel, time += 1/3, dur);
 }
 
+// i.) Essayons de jouer des notes pour faire une mélodie !
+// ii.) Ajoutons un peu d'aléatoire pour la durée de chaque note ?
+
+
 </script>
 <br>
 <br>
 
 
-<h1>CC7 TP : </h1>
+<h1>CC7 TP : Son </h1>
 <br>
 
- <h2>Créez un code qui genère de la musique à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+ <h2>Créez un code qui genère du son à partager avec la classe. Mettez le code <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
 
  Cliquer sur file -> share -> editor pour avoir le liens de votre code. </h2>
  
