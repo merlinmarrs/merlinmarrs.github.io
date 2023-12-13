@@ -67,8 +67,7 @@ function draw(){
 // Ce code ne va pas fonctionner sur le site web github.io !
 
 function setup() {
-  createCanvas(innerWidth, innerHeight, WEBGL);
-  describe('a sphere geometry with multiple materials applied to it');
+  createCanvas(400, 400, WEBGL);
 }
 
 function draw() {
@@ -77,28 +76,17 @@ function draw() {
   
   noStroke();
 
-  ambientLight(128);
   let locX = mouseX - width / 2;
   let locY = mouseY - height / 2;
+  
   pointLight(255, 255, 255, locX, locY, 100);
 
-  // normal material shows the geometry normals
-  normalMaterial();
-
-  // ambient materials reflect under any light
-  ambientMaterial(255, 0, 0);
-
-  // emissive materials show the same color regardless of light
-  emissiveMaterial(0, 255, 0);
-
-  // specular materials reflect the color of the light source 
-  // and can vary in 'shininess'
-  shininess(10);
-  specularMaterial(0, 0, 255);
-
-  // box(50);
   sphere();
 }
+// i. Si on change en commentaires noStroke() ?
+// ii. Est-ce qu'on peut automatiquement déplacer la lumière ?
+// iii. Ajoutons d'autres formes ! 
+// iv. rotation avec sinus ?
 
 </script>
 
