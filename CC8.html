@@ -35,7 +35,7 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC8.0 Hello World 3D 
+// CC8.0 Hello World 3D :  Cube
 //
 // Ce code ne va pas fonctionner sur le site web github.io !
 
@@ -59,10 +59,35 @@ function draw(){
 
 <br>
 <br>
-
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC8.1 Hello World Rendering en 3D 
+// CC8.1 Hello World 3D : Texture 
+//
+// Ce code ne va pas fonctionner sur le site web github.io !
+
+// il faut ajouter un fichier (et l'appeller "texture.jpg" avec vos sketch files à la page https://editor.p5js.org/
+
+function preload() {
+  img = loadImage('texture.jpg');
+}
+
+function setup(){
+  createCanvas(500,500,WEBGL);
+}
+function draw(){
+  background(255);
+  texture(img);
+  rotateX(frameCount * 0.01);
+  box();
+}
+</script>
+
+
+<br>
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC8.2 Hello World : Rendering
 //
 // Ce code ne va pas fonctionner sur le site web github.io !
 
