@@ -39,21 +39,22 @@ p    {font-family: courier;font-size: 100%;}
 
 //CC6.0 Calculatrice graphique
 
+var x=0;
+
 function setup() { 
     createCanvas(400, 400);
+    background(220);
 }
 
 function draw() {
-  // Invert the y-axis.
-  scale(1, -1);
-  translate(0, -height);
 
-  let x = frameCount;
-  let y = 5 * sqrt(x);
+  x++;
+  let y = 5 * sqrt(x); // l'équation à visualiser 
+  strokeWeight(3);
   point(x, y);
 }
 
-// i. Si on remplace sqrt() par sq(), log(), pow() ?
+// i. Si on remplace sqrt(x) par sq(x), log(x), pow(x,y) ? Quels coefficients choisir pour le rendre visible ?
 // ii.  Si on remplace par une equation comme let y = x*x + .6*x + 1;
 // iii. 
 // iv.
@@ -83,7 +84,7 @@ function draw() {
     point(x, y + 100); // plus 100 plus deplacer vers le milieu 
 
 }
-// i. Quel est le lien entre ce code et cette animation https://upload.wikimedia.org/wikipedia/commons/b/bd/Sine_and_cosine_animation.gif ?
+// i. Si on cree une boucle for autour et varie une variable dans l'equation avec sinus ?
 // ii. 
 // iii. 
 // iv.
@@ -109,8 +110,8 @@ function draw() {
   ellipse(200, y, 20, 20);
 
 }
-// i. Quel est le lien entre ce code et cette animation https://upload.wikimedia.org/wikipedia/commons/b/bd/Sine_and_cosine_animation.gif ?
-// ii. 
+// i. Si on met background() dans le setup ?
+// ii. Si on change le x pour la fonction ellipse à une variable comme t ?
 // iii. 
 // iv.
 </script>
@@ -135,6 +136,10 @@ function draw() {
   point(y+100, x+100);
 
 }
+// i. Changons les coefficients pour les deux equations aux lignes 13 et 14
+// ii. 
+// iii. 
+// iv.
 
 </script>
 <br>
