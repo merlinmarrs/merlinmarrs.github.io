@@ -38,16 +38,20 @@ p    {font-family: courier;font-size: 100%;}
 // draw a spinning box
 // with width, height and depth of 50
 function setup() {
-  createCanvas(100, 100, WEBGL);
-  describe('a white box rotating in 3D space');
+  createCanvas(400, 400, WEBGL); // Il faut specifier WEBGL ici !
 }
 
-function draw() {
-  background(200);
+function draw(){
+  background(255);
   rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
-  box(50);
+  box();
 }
+
+// i. rotateY ? rotateZ ?
+// ii. translate(100,100,-100) ?
+// iii. plane() sphere() ellipsoid() cone() cylinder() torus() ?
+// iv. camera(100,100,100+(frameCount)) 
+
 </script>
 
 
