@@ -37,32 +37,31 @@ p    {font-family: courier;font-size: 100%;}
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-//CC6.0 Calculatrice graphique
+//CC6.0 Sinus une axe
 
-var x=0;
+let t = 0;
 
 function setup() { 
     createCanvas(400, 400);
-    background(220);
 }
 
 function draw() {
+  background(200);
+  t++;
+  let y = 100 * sin(t * 0.05) + 200;
+  ellipse(200, y, 20, 20);
 
-  x++;
-  let y = 5 * sqrt(x); // l'équation à visualiser 
-  strokeWeight(3);
-  point(x, y);
 }
-
-// i. Si on remplace sqrt(x) par sq(x), log(x), pow(x,y) ? Quels coefficients choisir pour le rendre visible ?
-// ii.  Si on remplace par une equation comme let y = x*x + .6*x + 1;
+// i. Si on met background() dans le setup ?
+// ii. Si on change le x pour la fonction ellipse à une variable comme t ?
 // iii. 
 // iv.
-
 </script>
 <br>
 
 <br>
+
+
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
@@ -112,9 +111,12 @@ function draw() {
 }
 // i. Si on met background() dans le setup ?
 // ii. Si on change le x pour la fonction ellipse à une variable comme t ?
-// iii. 
+// iii. Si on change le x pour la fonction ellipse à une variable comme mouseX ?
 // iv.
 </script>
+<br>
+
+<br>
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
@@ -138,6 +140,35 @@ function draw() {
 }
 // i. Changons les coefficients pour les deux equations aux lignes 13 et 14
 // ii. 
+// iii. 
+// iv.
+
+</script>
+<br>
+
+<br>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+//CC6.4 Calculatrice graphique
+
+var x=0;
+
+function setup() { 
+    createCanvas(400, 400);
+    background(220);
+}
+
+function draw() {
+
+  x++;
+  let y = 5 * sqrt(x); // l'équation à visualiser 
+  strokeWeight(3);
+  point(x, y);
+}
+
+// i. Si on remplace sqrt(x) par sq(x), log(x), pow(x,y) ? Quels coefficients choisir pour le rendre visible ?
+// ii.  Si on remplace par une equation comme let y = x*x + .6*x + 1;
 // iii. 
 // iv.
 
