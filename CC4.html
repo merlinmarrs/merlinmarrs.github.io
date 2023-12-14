@@ -41,23 +41,21 @@ p    {font-family: courier;font-size: 100%;}
 let c;
 
 function setup() {
-  createCanvas(510, 510);
-  noLoop();
+  createCanvas(255, 255);
   c = random(0,255);
-}
-function draw() {
-noStroke();
+
 for (let i = 0; i < 255; i++) {
   for (let j = 0; j < 255; j++) {
     stroke(i, j, c);
     point(i, j);
-  }
+      }
+   }
 }
-}
-// i. 
-// ii. 
-// iii. 
-// iv. 
+
+// i. Si on change l'ordre de i, j et c dans stroke() ?
+// ii.line(i, j,0,0) à la place de point() ?
+// iii. Changeons la taille de la toile.
+// iv. Mettons les boucles for dans draw() ?
 </script>
 
 <br>
