@@ -35,6 +35,9 @@ p    {font-family: courier;font-size: 100%;}
 
 
 <script type="text/p5" data-height="600" data-preview-width="600">
+
+// CC 4.0: for
+// 
 let c;
 
 function setup() {
@@ -51,6 +54,10 @@ for (let i = 0; i < 255; i++) {
   }
 }
 }
+// i. 
+// ii. 
+// iii. 
+// iv. 
 </script>
 
 <br>
@@ -58,7 +65,7 @@ for (let i = 0; i < 255; i++) {
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-// CC 1.2: for
+// CC 4.1: for + trame
 // Auteur : Steve's Makerspace
 
 function setup() {
@@ -76,18 +83,17 @@ function setup() {
     }
   }
 }
-// i. 
-// ii. 
-// iii. 
-// iv. 
+
 
 </script>
 <br>
 <br>
 <script type="text/p5" data-height="600" data-preview-width="600">
-//  Auteur : ajithranka
-// Max value to offset rectangles by.
-var maxOffset = 30;
+
+// CC 4.2: for + formes
+// Auteur : ajithranka
+// 
+let maxOffset = 30;
 
 function setup() {
   createCanvas(400, 400);
@@ -98,9 +104,9 @@ function setup() {
 function draw() {
   background(255)
   
-  for (var size = 10; size < 300; size += 10) {
-    var offsetX = random(-maxOffset, maxOffset);
-    var offsetY = random(-maxOffset, maxOffset);
+  for (let size = 10; size < 300; size += 10) {
+    let offsetX = random(-maxOffset, maxOffset);
+    let offsetY = random(-maxOffset, maxOffset);
     
     noFill();
     rect(width/2 + offsetX, height/2 + offsetY, size, size);
