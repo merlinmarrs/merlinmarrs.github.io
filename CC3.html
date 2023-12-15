@@ -124,6 +124,47 @@ function draw() {
 <br>
 <br>
 
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+// 
+// Patt Vira
+//https://www.youtube.com/watch?v=rp5xb3VxMt4
+
+let x = 100;
+let y = 100;
+let dx = 2;
+let dy = 3;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  
+  // Draw a Circle
+  fill(255, 210, 0);
+  ellipse(x, y, 25, 25);
+  
+  // Move a Circle
+  x = x + dx;
+  y = y + dy;
+  
+  // Check Boundaries
+  if (x > width || x < 0){
+    dx = dx * -1;
+  }
+  if (y > height || y < 0){
+    dy = dy * -1;
+  }
+}
+
+</script>
+<br>
+<br>
+
+
 <h1>CC3 TP : If </h1>
 <br>
 
