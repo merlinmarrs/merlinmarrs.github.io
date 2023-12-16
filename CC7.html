@@ -162,7 +162,7 @@ let osc, fft;
 function setup() {
   createCanvas(720, 256);
 
-  osc = new p5.TriOsc(); // set frequency and type
+  osc = new p5.Oscillator('sawtooth'); // set frequency and type
   osc.amp(0.5);
 
   fft = new p5.FFT();
@@ -182,13 +182,14 @@ function draw() {
   }
   endShape();
 
-  // change oscillator frequency based on mouseX
-  let freq = map(mouseX, 0, width, 40, 880);
-  osc.freq(freq);
-
-  let amp = map(mouseY, 0, height, 1, 0.01);
-  osc.amp(amp);
+  osc.freq(mouseX);
+  osc.amp(mouseY);
+  
 }
+
+// i.) Essayons osc.freq(sin(t*.4)*mouseX) ?
+// ii.) Code music with if (t%100) !
+
 </script>
 <br>
 <br>
