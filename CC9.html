@@ -34,7 +34,7 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
- /*CC9.0 Défi de debogage : Trouvez l'erreur pour compiler !
+/*CC9.0 Défi de debogage : Trouvez l'erreur pour compiler !
  /
  / Auteur : Andai avec modification par Jonah Marrs en 2021
  / Titre : Unicode compositions
@@ -43,64 +43,58 @@ p    {font-family: courier;font-size: 100%;}
  /
 */
 
-let branches = 0; // pour compter le nombre de branches 
-let max_branches = 80; // le nombre max de branches 
-let life = 40; // nombre de générations 
+let branches = 0; // pour compter le nombre de branches
+let max_branches = 80; // le nombre max de branches
+let life = 40; // nombre de générations
 let spacer = 10; // espacement entre caractères ASCII
-// les caractères qui vont constituer les compositions 
+// les caractères qui vont constituer les compositions
 let unicodes = ["⌒", "⌃", "§", "¦", "ĭ", "ł", "ſ", "Ɨ", "»", "Ɨ", "ǂ", "╼", "¨", "~", "˨", "ǁ", "Ψ", "῏", "҂", "…", "⁋", "※", "‿", "⁂", "⁁", "≀", "↓", "→", "⋰", "⌟", "˽", "⌁", "╰", "╳", "┊","◇","▂", "ײַ","◌", "◗", "◤", "♒"]
 // pour trouver d'autres caractères ASCII : https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 //le setup() est fait une fois
 function setup() {
-
   createCanvas(400, 400); // toile de 400 pixels par 400 pixels
   // choisir deux caractères ASCII (char1 et char 2) de façon aléatoire parmi la liste "unicodes"
-  char1 = unicodes[int(random(0,unicodes.length))]; 
-  char2 = unicodes[int(random(0,unicodes.length))];
+  char1 = unicodes[int(random(0, unicodes.length))];
+  char2 = unicodes[int(random(0, unicodes.length))];
 }
 
 //le setup() est fait une fois
-function setup(){
-
+function setup() {
   background(255); //arrière plan blanc
-  
-  }
+}
 
 // draw() est fait en boucle normalement
 function draw() {
-  
   //pour le point de départ de notre composition abstraite, au milieu et vers le bas sur la toile :
   let x = width / 2;
-  let y = int(height/8);
+  let y = int(height / 8);
   branch(x, y, life); // activer la fonction branch dessous qui va s'occuper de tout dessiner
-  noLoop(); // fait la fonction draw() une seule fois seullement 
-  
-  }
-
+  noLoop(); // fait la fonction draw() une seule fois seullement
+}
 
 function branch(x, y, life) {
-
-/*
+  /*
 
 Une fonction récursive (https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif) qui dessine nos caractères ASCII à des coordonnées x et y 
 
 */
-  
+
   let dy = int(random(0, 10)) > 3 ? -2 : 2; // choisir d'une manière aléatoire entre deux options : -2 et 2.
   let dx = int(random(-3, 3)); // choisir d'une manière aléatoire entre -3, -2, -1, 0, 1, 2, ou 3.
 
-  x += dx * spacer; // incrémente/décremente la position x de -3, -2, -1, 0, 1, 2, ou 3 en respectant l'espacement dans la grille 
-  y -= dy * spacer; // incrémente/décremente la position y de -2 ou 2 en respectant l'espacement dans la grille 
+  x += dx * spacer; // incrémente/décremente la position x de -3, -2, -1, 0, 1, 2, ou 3 en respectant l'espacement dans la grille
+  y -= dy * spacer; // incrémente/décremente la position y de -2 ou 2 en respectant l'espacement dans la grille
 
-//Si on n'a pas dépassé le maximum nombre de branches... 
-  if (branches < max_branches) { 
-    if (life % 3 == 0 || int(random(0, 50)) < 2 || life < 5) { //...et si on a peu de générations qui reste ou a des moments aléatoires peu fréquent 
+  //Si on n'a pas dépassé le maximum nombre de branches...
+  if (branches < max_branches) {
+    if (life % 3 == 0 || int(random(0, 50)) < 2 || life < 5) {
+      //...et si on a peu de générations qui reste ou a des moments aléatoires peu fréquent
       branches++; // ... ajouter une branche à la variable "branches"
       branch(x, y, life - 1); //...et faire tourner la function branche() avec une génération de moins
     }
   }
-  
+
   // choisir entre nos deux unicodes char1 et char2 dépendant de la direction de la croissance et s'il existe plus de générations
   let char = dx > 0 ? char1 : char1;
   if (dx == 1) {
@@ -112,29 +106,26 @@ Une fonction récursive (https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif)
   if (life == 0) {
     char = char2;
   }
-  
+
   textSize(15);
   text(char, x, y); // faire apparaitre le caractère ASCII dans la toile aux coordonnées X et Y
   fill(0);
 
-//Si on dépasse les limites de l'écran, terminer le programme
+  //Si on dépasse les limites de l'écran, terminer le programme
   if (x < 0 || x > width - 1 || y < 0) {
-      return;
+    return;
   }
 
-//Si il reste de générations, faire tourner la function branche() avec une génération de moins
+  //Si il reste de générations, faire tourner la function branche() avec une génération de moins
 
   if (life > 0) {
-      branch(x, y, life - 1);
+    branch(x, y, life - 1);
   }
 }
 
-
-
 // i. Combien de draw() existe-t-il dans ce code ?
 // ii. Combien de setup() existe-t-il dans ce code ?
-// iii. 
-// iv. 
+
 
 </script>
 
@@ -234,6 +225,11 @@ function draw() {
     }
   }
 }
+
+// i. Combien de draw() existe-t-il dans ce code ?
+// ii. Combien de setup() existe-t-il dans ce code ?
+// iii.
+// iv.
 </script>
 
 
