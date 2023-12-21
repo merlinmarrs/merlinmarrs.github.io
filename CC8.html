@@ -53,6 +53,8 @@ function draw(){
 // ii. translate(100,100,-100) ?
 // iii. plane() sphere() ellipsoid() cone() cylinder() torus() ?
 // iv. camera(100,100,100+(frameCount)) 
+// v. scale(x,y,z) ?
+// vi. ortho() ?
 
 </script>
 
@@ -114,8 +116,42 @@ function draw() {
 // iv. rotation avec sinus ?
 
 </script>
+<br>
+<br>
+<script type="text/p5" data-height="600" data-preview-width="600">
 
+// CC8.3 Hello World : Formes sur-mesures 
+// Auteur : https://p5js.org/learn/getting-started-in-webgl-custom-geometry.html
+// 
 
+function setup() {
+  createCanvas(400, 400, WEBGL);
+}
+
+function draw(){
+  background(220);
+  
+  // click+drag on canvas to look around the shape
+  orbitControl();
+  
+  fill(255,0,0,128);
+    
+  var numVertices = 100;
+  translate(0,numVertices,0);
+  rotateY(millis()/1000);
+  scale(20);
+  beginShape();
+  // a simple spiral shape
+  for(let i = 0; i < numVertices; i++) {
+    vertex(
+      sin((i/numVertices*TWO_PI)*5)*sin(i/numVertices*PI)*2,
+      -i/10, 
+      cos((i/numVertices*TWO_PI)*5)*sin(i/numVertices*PI)*2,
+    );
+  }
+  endShape();
+}
+</script>
 <br>
 <br>
 
