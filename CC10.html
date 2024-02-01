@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+<!-- <script type="text/p5" src="C:/Users/jm225306/OneDrive - De Vinci/Documents/GitHub/merlinmarrs.github.io/test/example.js"></script> -->
+<head>
+<style>
+body {font-family: courier;}
+h1   {font-family: courier;font-size: 150%;}
+h2   {font-family: courier;font-size: 120%;}
+p    {font-family: courier;font-size: 100%;}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Créatif</title>
+	<h1>CC10: Les Data </h1>
+    <nav>
+        <ul>
+		    <li><a href="index.html">CC0</a></li>
+            <li><a href="CC1.html">CC1</a></li>
+            <li><a href="CC2.html">CC2</a></li>
+            <li><a href="CC3.html">CC3</a></li>
+            <li><a href="CC4.html">CC4</a></li>
+            <li><a href="CC5.html">CC5</a></li>
+			<li><a href="CC6.html">CC6</a></li>
+            <li><a href="CC7.html">CC7</a></li>
+            <li><a href="CC8.html">CC8</a></li>
+            <li><a href="CC9.html">CC9</a></li>
+            <li><a href="CC10.html">CC10</a></li>
+            <li><a href="CC11.html">CC11</a></li>
+            <li><a href="CC12.html">CC12</a></li>
+            <li><a href="CC13.html">CC13</a></li>
+            <li><a href="CC14.html">CC14</a></li>
+			<li><a href="CC15.html">CC15</a></li>
+            <li><a href="CC16.html">CC16</a></li>
+            <li><a href="CC17.html">CC17</a></li>
+            <li><a href="CC18.html">CC18</a></li>
+			<li><a href="CC19.html">CC19</a></li>
+        </ul>
+        </nav>
+        
+</head>
+<body>
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+/*CC10.0 
+ /
+ / Auteur : https://p5js.org/reference/#/p5/loadJSON
+ / 
+ /
+ / 
+ /
+*/
+
+// Examples use USGS Earthquake API:
+//   https://earthquake.usgs.gov/fdsnws/event/1/#methods
+let earthquakes;
+function preload() {
+  // Get the most recent earthquake in the database
+  let url =
+   'https://earthquake.usgs.gov/earthquakes/feed/v1.0/' +
+    'summary/all_day.geojson';
+  earthquakes = loadJSON(url);
+}
+
+function setup() {
+  noLoop();
+}
+
+function draw() {
+  background(200);
+  // Get the magnitude and name of the earthquake out of the loaded JSON
+  let earthquakeMag = earthquakes.features[0].properties.mag;
+  let earthquakeName = earthquakes.features[0].properties.place;
+  ellipse(width / 2, height / 2, earthquakeMag * 10, earthquakeMag * 10);
+  textAlign(CENTER);
+  text(earthquakeName, 0, height - 30, width, 30);
+  describe(`50×50 ellipse that changes from black to white
+    depending on the current humidity`);
+}
+
+
+// i. 
+// ii. 
+
+
+</script>
+<br>
+<br>
+
+<h1>CC10 TP: Les Data </h1>
+<br>
+
+ <h2>Assurez-vous que tous vos liens sont bien ici : <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
+
+
+</body>
+</html>
