@@ -44,19 +44,19 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-/*CC14.0 
+/* CC 14.0 
 // Daniel Shiffman
 // http://codingtra.in
 // http://patreon.com/codingtrain
 // Code for: https://youtu.be/AaGK-fj-BAM
 */
+
 function Snake() {
   this.x = 0;
   this.y = 0;
   this.xspeed = 1;
   this.yspeed = 0;
   this.total = 0;
-  this.tail = [];
 
   this.eat = function(pos) {
     var d = dist(this.x, this.y, pos.x, pos.y);
@@ -73,25 +73,9 @@ function Snake() {
     this.yspeed = y;
   }
 
-  this.death = function() {
-    for (var i = 0; i < this.tail.length; i++) {
-      var pos = this.tail[i];
-      var d = dist(this.x, this.y, pos.x, pos.y);
-      if (d < 1) {
-        console.log('starting over');
-        this.total = 0;
-        this.tail = [];
-      }
-    }
-  }
+  
 
   this.update = function() {
-    for (var i = 0; i < this.tail.length - 1; i++) {
-      this.tail[i] = this.tail[i + 1];
-    }
-    if (this.total >= 1) {
-      this.tail[this.total - 1] = createVector(this.x, this.y);
-    }
 
     this.x = this.x + this.xspeed * scl;
     this.y = this.y + this.yspeed * scl;
@@ -102,9 +86,6 @@ function Snake() {
 
   this.show = function() {
     fill(255);
-    for (var i = 0; i < this.tail.length; i++) {
-      rect(this.tail[i].x, this.tail[i].y, scl, scl);
-    }
     rect(this.x, this.y, scl, scl);
 
   }
@@ -116,7 +97,7 @@ var scl = 20;
 var food;
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(400, 400);
   s = new Snake();
   frameRate(10);
   pickLocation();
@@ -130,17 +111,13 @@ function pickLocation() {
   food.mult(scl);
 }
 
-function mousePressed() {
-  s.total++;
-}
-
 function draw() {
   background(51);
 
   if (s.eat(food)) {
     pickLocation();
   }
-  s.death();
+ 
   s.update();
   s.show();
 
@@ -148,9 +125,6 @@ function draw() {
   fill(255, 0, 100);
   rect(food.x, food.y, scl, scl);
 }
-
-
-
 
 
 function keyPressed() {
@@ -165,144 +139,12 @@ function keyPressed() {
   }
 }
 
-</script>
-<br>
-<br>
-<script type="text/p5" data-height="600" data-preview-width="600">
+// i. Si on change la valeur de scl ?
+// ii.Si on change la valeur donnée à frameRate() ?
+// iii. Comment est-ce qu'on pourrait ajouter notre score <<s.total>>
+// iv. Plusieurs <<food>> ?
 
-// More Steering Behaviors! (Pursue)
-// The Nature of Code
-// The Coding Train / Daniel Shiffman
-// https://youtu.be/Q4MU7pkDYmQ
-// https://thecodingtrain.com/learning/nature-of-code/5.3-flee-pursue-evade.html
 
-// Flee: https://editor.p5js.org/codingtrain/sketches/v-VoQtETO
-// Pursue: https://editor.p5js.org/codingtrain/sketches/Lx3PJMq4m
-// Evade: https://editor.p5js.org/codingtrain/sketches/X3ph02Byx
-// Pursue Bouncing Ball: https://editor.p5js.org/codingtrain/sketches/itlyDq3ZB
-// Pursue Wander: https://editor.p5js.org/codingtrain/sketches/EEnmY04lt
-// Pursue Slider Prediction: https://editor.p5js.org/codingtrain/sketches/l7MgPpTUB
-
-class Vehicle {
-  constructor(x, y) {
-    this.pos = createVector(x, y);
-    this.vel = createVector(0, 0);
-    this.acc = createVector(0, 0);
-    this.maxSpeed = 10;
-    this.maxForce = 0.25;
-    this.r = 16;
-  }
-
-  evade(vehicle) {
-    let pursuit = this.pursue(vehicle);
-    pursuit.mult(-1);
-    return pursuit;
-  }
-
-  pursue(vehicle) {
-    let target = vehicle.pos.copy();
-    let prediction = vehicle.vel.copy();
-    prediction.mult(10);
-    target.add(prediction);
-    fill(0, 255, 0);
-    circle(target.x, target.y, 16);
-    return this.seek(target);
-  }
-
-  flee(target) {
-    return this.seek(target).mult(-1);
-  }
-
-  seek(target) {
-    let force = p5.Vector.sub(target, this.pos);
-    force.setMag(this.maxSpeed);
-    force.sub(this.vel);
-    force.limit(this.maxForce);
-    return force;
-  }
-
-  applyForce(force) {
-    this.acc.add(force);
-  }
-
-  update() {
-    this.vel.add(this.acc);
-    this.vel.limit(this.maxSpeed);
-    this.pos.add(this.vel);
-    this.acc.set(0, 0);
-  }
-
-  show() {
-    stroke(255);
-    strokeWeight(2);
-    fill(255);
-    push();
-    translate(this.pos.x, this.pos.y);
-    rotate(this.vel.heading());
-    triangle(-this.r, -this.r / 2, -this.r, this.r / 2, this.r, 0);
-    pop();
-  }
-
-  edges() {
-    if (this.pos.x > width + this.r) {
-      this.pos.x = -this.r;
-    } else if (this.pos.x < -this.r) {
-      this.pos.x = width + this.r;
-    }
-    if (this.pos.y > height + this.r) {
-      this.pos.y = -this.r;
-    } else if (this.pos.y < -this.r) {
-      this.pos.y = height + this.r;
-    }
-  }
-}
-
-class Target extends Vehicle {
-  constructor(x, y) {
-    super(x, y);
-    this.vel = p5.Vector.random2D();
-    this.vel.mult(5);
-  }
-
-  show() {
-    stroke(255);
-    strokeWeight(2);
-    fill("#F063A4");
-    push();
-    translate(this.pos.x, this.pos.y);
-    circle(0, 0, this.r * 2);
-    pop();
-  }
-}
-
-let pursuer;
-let target;
-
-function setup() {
-  createCanvas(800, 800);
-  pursuer = new Vehicle(100, 100);
-  target = new Target(200, 100);
-}
-
-function draw() {
-  background(0);
-
-  let steering = pursuer.pursue(target);
-  pursuer.applyForce(steering);
-
-  let d = p5.Vector.dist(pursuer.pos, target.pos);
-  if (d < pursuer.r + target.r) {
-    target = new Target(random(width), random(height));
-    pursuer.pos.set(width / 2, height / 2);
-  }
-
-  pursuer.update();
-  pursuer.show();
-
-  target.edges();
-  target.update();
-  target.show();
-}
 </script>
 <br>
 <br>

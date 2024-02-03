@@ -13,7 +13,7 @@ p    {font-family: courier;font-size: 100%;}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Créatif</title>
-	<h1>CC13: Push + Pop </h1>
+	<h1>CC15 : Intélligence Artificielle </h1>
     <nav>
         <ul>
 		    <li><a href="index.html">CC0</a></li>
@@ -44,67 +44,62 @@ p    {font-family: courier;font-size: 100%;}
 <body>
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-//CC13.0 
+/* CC 15.0 
+// Daniel Shiffman
+// http://codingtra.in
+// http://patreon.com/codingtrain
+// Code for: https://youtu.be/AaGK-fj-BAM
+*/
 
-let angle = 0;
- 
-function setup() {
-  createCanvas(400, 400);
-  angleMode(DEGREES);
-  rectMode(CENTER);
+let mobilenet;
+
+function modelReady() {
+
+console.log('Model is ready !');
+mobilenet.predict(puffin, gotResults);
 }
- 
-function draw() {
-  background(0);
-  translate(100, 100);
-  rotate(angle);
-  fill(255, 0, 100);
-  rect(0, 0, 100, 100);
-  fill(0, 255, 0);
-  rect(50, 50, 100, 100);
-  angle = angle +1;
+
+function gotResults(error, results) {
+
+if (error) {
+
+console.error(error)
+}
+else {
+console.log(results);
+let label = results[0].className;
+fill(0);
+textsize(50);
+text(label, 10, height-100);
+}
+
+function imageReady() {
+
+ image(puffin, 0,0, width, height);
+}
+
+
+function setup(){
+
+createCanvas(500,500);
+puffin = createImg(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Puffin_%28Fratercula_arctica%29.jpg/600px-Puffin_%28Fratercula_arctica%29.jpg, imageReady);
+puffin.hide();
+background(0);
+
+mobilenet = ml5.imageClassifier('MobileNet', modelReady);
+
 }
 
 // i. 
-// ii. 
-
-
-</script>
-<br>
-<br>
-
-<script type="text/p5" data-height="600" data-preview-width="600">
-
-//CC13.0 
-
-let angle = 0;
- 
-function setup() {
-  createCanvas(400, 400);
-  angleMode(DEGREES);
-  rectMode(CENTER);
-}
- 
-function draw() {
-  background(0);
-	push(); //start new draw state
-		translate(100, 100);
-		rotate(angle);
-		fill(255, 0, 100);
-		rect(0, 0, 100, 100);
-	pop(); //finish draw state
-  fill(0, 255, 0);
-  rect(50, 50, 100, 100);
-	angle = angle +1;
-}
-
-
+// ii.
+// iii. 
+// iv. 
 
 </script>
 <br>
 <br>
 
-<h1>CC13 TP: Push + Pop </h1>
+<h1>CC15 TP: L'Intelligence Artificielle </h1>
 <br>
 
  <h2>Assurez-vous que tous vos liens sont bien ici : <a href="https://docs.google.com/spreadsheets/d/1KK7A3tcShsuHunlFi46-RLcrk_nuaJ41vLja7rUDIwA/edit?usp=sharing">ici</a>
