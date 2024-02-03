@@ -103,6 +103,58 @@ function draw() {
 </script>
 <br>
 <br>
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+function setup(){
+    background(255);
+  createCanvas(400,400);
+  noLoop();
+  angleMode(DEGREES);
+  rectMode(CENTER);
+  reset();
+}
+
+function draw() {
+
+}
+
+function mouseClicked() {
+ background(255);
+  reset();
+}
+
+function reset() {
+  let noiseLevel = 255;
+  let noiseScale = 0.001;
+  for (let y = 0; y < height; y += height/10) {
+    for (let x = 0; x < width; x += width/10) {
+      // Scale input coordinates.
+      let nx = noiseScale * x;
+      let ny = noiseScale * y;
+      let nt = noiseScale * frameCount * millis();
+      // Compute noise value.
+      let c = noiseLevel * noise(nx, ny, nt);
+      // Render.
+      
+
+      
+      strokeWeight(5);
+      stroke(c);
+
+      push();
+
+      translate (x, y);
+      rotate(c);
+      rect(0, 0, 25, 1); // THIS MUST BE ZERO FOR TRANSLATE XY TO WORK
+      pop();
+
+    }
+  }
+   }
+
+</script>
+<br>
+<br>
 
 <h1>CC13 TP: Push + Pop </h1>
 <br>
