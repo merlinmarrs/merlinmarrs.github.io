@@ -56,19 +56,20 @@ p    {font-family: courier;font-size: 100%;}
 let img;
 
 function preload() {
-  img = loadImage('laDefense.jpg');
+  // si ce URL est bloqué, essayez de téléverser une image en l'éditeur p5js 'assets/thundercat.jpg'
+  img = loadImage('https://as2.ftcdn.net/v2/jpg/03/03/62/45/1000_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg');
 }
 
 function setup() {
+  createCanvas(500, 500);
   image(img, 0, 0);
   tint(255, 0, 0, 100);
   image(img, 50, 0);
 
 }
 
-// i. 
-// ii. 
-
+// i. Si on ajoute une deuxieme image ?  image(img, 0, 0); ...   image(img, 50, 0); ?
+// ii. Si on utilise la fonction tint(255, 0, 0, 100); ?
 
 </script>
 <br>
