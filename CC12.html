@@ -86,12 +86,10 @@ class Ball{
 
 let b; 
 
-let b2; 
 
 function setup() {
   createCanvas(400, 400);
   b = new Ball(100, 100);
-    b2 = new Ball(10, 100);
 }
 
 function draw() {
@@ -99,14 +97,12 @@ function draw() {
   b.drawCircle();
   b.moveCircle();
   b.checkBoundary();
-  b2.drawCircle();
-  b2.moveCircle();
-  b2.checkBoundary();
 }
 
 
-// i. 
-// ii. 
+// i. Et si on ajoute b2 = new Ball(10, 100) + b2.drawCircle() etc. ?
+// ii. Et si on change le constructeur pour prendre (x,y,dx,dy) et on l'instancie avec 4 values ?
+// iii. Comment est-ce qu'on pourrait changer la couleur dans l'instantiation ?
 
 
 </script>
