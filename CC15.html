@@ -49,6 +49,15 @@ p    {font-family: courier;font-size: 100%;}
 // http://codingtra.in
 // http://patreon.com/codingtrain
 // Code for: https://youtu.be/AaGK-fj-BAM
+
+
+
+
+ADD   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script> to the index !!!!
+
+
+
+
 */
 
 let mobilenet;
@@ -72,6 +81,7 @@ fill(0);
 textsize(50);
 text(label, 10, height-100);
 }
+  }
 
 function imageReady() {
 
@@ -82,14 +92,12 @@ function imageReady() {
 function setup(){
 
 createCanvas(500,500);
-puffin = createImg(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Puffin_%28Fratercula_arctica%29.jpg/600px-Puffin_%28Fratercula_arctica%29.jpg, imageReady);
-puffin.hide();
+puffin = createImage('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Puffin_%28Fratercula_arctica%29_with_lesser_sand_eels_%28Ammodytes_tobianus%29.jpg/1920px-Puffin_%28Fratercula_arctica%29_with_lesser_sand_eels_%28Ammodytes_tobianus%29.jpg', imageReady);
 background(0);
 
 mobilenet = ml5.imageClassifier('MobileNet', modelReady);
 
 }
-
 // i. 
 // ii.
 // iii. 
