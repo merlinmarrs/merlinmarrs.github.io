@@ -68,7 +68,7 @@ function myFunction(a, b) {
 <script type="text/p5" data-height="600" data-preview-width="600">
 
 // CC12.1
-
+// an example of a object (person) with three propoerties and person.fullName() (which is a method of the object called person)
 const person = {
   firstName: "John",
   lastName : "Doe",
@@ -100,10 +100,11 @@ function setup() {
 */
 
 
-
+// the constructor method is required for all classes, an empty one will be generated if you forget to add one
+// a class is not an object, it is a templace for JavaScript objects
 class Ball{
   constructor(x, y){
-    this.x = x;
+    this.x = x; // properties of the class
     this.y = y;
     this.dx = 2;
     this.dy = 3;
@@ -134,7 +135,7 @@ let b;
 
 function setup() {
   createCanvas(400, 400);
-  b = new Ball(100, 100);
+  b = new Ball(100, 100); // useing a class to create an object called b
 }
 
 function draw() {
