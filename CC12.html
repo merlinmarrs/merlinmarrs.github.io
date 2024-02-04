@@ -67,7 +67,29 @@ function myFunction(a, b) {
 
 <script type="text/p5" data-height="600" data-preview-width="600">
 
-/*CC12.1
+// CC12.1
+
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+function setup() {
+  createCanvas(400, 400);
+  print(person.fullName());
+}
+
+</script>
+<br>
+<br>
+
+<script type="text/p5" data-height="600" data-preview-width="600">
+
+/*CC12.2
  /
  / Auteur : Patt Vira
  / Name: Bouncing Ball (Object-oriented Programming)
