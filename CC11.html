@@ -46,7 +46,7 @@ p    {font-family: courier;font-size: 100%;}
 
 /*CC11.0 
  /
- / Auteur : https://p5js.org/reference/#/p5/tint
+ / Auteur : 
  / 
  /
  / 
@@ -62,14 +62,15 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
+  img.filter(GRAY);
   image(img, 0, 0);
-  tint(255, 0, 0, 100);
-  image(img, 50, 0);
 
 }
 
 // i. Si on ajoute une deuxieme image ?  image(img, 0, 0); ...   image(img, 50, 0); ?
-// ii. Si on utilise la fonction tint(255, 0, 0, 100); ?
+// ii. Si on utilise la fonction tint(255, 0, 0, 100); ? La syntaxe : tint(v1, v2, v3, [alpha]). Plus d'info : https://p5js.org/reference/#/p5/tint
+// iii. A la place de GRAY, essayons : DILATE, ERODE, (BLUR, 3) (POSTERIZE, 3), (THRESHOLD, 0.75), INVERT.
+// (Plus d'info ici https://p5js.org/reference/#/p5.Image/filter)
 
 </script>
 <br>
